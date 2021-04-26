@@ -1,4 +1,5 @@
 using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
+using API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using API.EbisMaintenance.WebAPI.AutoMapperService;
 using AutoMapper;
@@ -29,6 +30,7 @@ namespace API.EbisMaintenance.WebAPI
             var mapperConfig = new MapperConfiguration(config =>
             {
                 config.AddProfile<BorneProfile>();
+                config.AddProfile<OperationRechargeProfile>();
             });
 
             services.AddAutoMapper(typeof(Startup));
@@ -54,6 +56,9 @@ namespace API.EbisMaintenance.WebAPI
             // Création et enregistrement des services par injection de dépendances
             CosmosDBService<Borne> serviceBorne = new CosmosDBService<Borne>(client, nomDB, nomContainer);
             services.AddSingleton<ICosmosDBService<Borne>>(serviceBorne);
+
+            CosmosDBService<OperationRecharge> serviceOperationRecharge = new CosmosDBService<OperationRecharge>(client, nomDB, nomContainer);
+            services.AddSingleton<ICosmosDBService<OperationRecharge>>(serviceOperationRecharge);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
