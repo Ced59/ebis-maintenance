@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/wheatherforecast",
+      "launchUrl": "api/bornes",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "API.EbisMaintenance.WebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/wheatherforecast",
+      "launchUrl": "api/bornes",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

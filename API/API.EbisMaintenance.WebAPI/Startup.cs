@@ -1,5 +1,8 @@
 using API.EbisMaintenance.Entities.CrudOperations.Borne;
 using API.EbisMaintenance.Services.CosmosService;
+using API.EbisMaintenance.WebAPI.AutoMapperService;
+using API.EbisMaintenance.WebAPI.CosmosService;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +33,15 @@ namespace API.EbisMaintenance.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Auto Mapper
+            var mapperConfig = new MapperConfiguration(config =>
+            {
+                config.AddProfile<BorneProfile>();
+            });
+
+            services.AddAutoMapper(typeof(Startup));
+
+            // Configuration CosmosDB
             IConfigurationSection configurationSection = Configuration.GetSection("CosmosDB");
             string nomDB = configurationSection.GetSection("nomDB").Value;
             string nomContainer = configurationSection.GetSection("nomContainer").Value;
@@ -48,7 +60,6 @@ namespace API.EbisMaintenance.WebAPI
             db.Database.CreateContainerIfNotExistsAsync(nomContainer, "/id").GetAwaiter().GetResult();
 
             // Création et enregistrement des services par injection de dépendances
-
             CosmosDBService<Borne> serviceBorne = new CosmosDBService<Borne>(client, nomDB, nomContainer);
             services.AddSingleton<ICosmosDBService<Borne>>(serviceBorne);
 
@@ -59,6 +70,10 @@ namespace API.EbisMaintenance.WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "E-Bis Maintenance API", Version = "v0.0.1" });
             });
+
+
+            // Décommenter pour garnir la bdd
+            //ServiceDonneesBase.GenererDonneesBase(client, nomDB, nomContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,7 +91,7 @@ namespace API.EbisMaintenance.WebAPI
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API E-Bis Maintenance");
-                c.RoutePrefix = "api/WheatherForecast";
+                c.RoutePrefix = "api/bornes";
             }
             );
 
