@@ -14,15 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.EbisMaintenance.CoucheM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.EbisMaintenance.CoucheViewModel", "WPF.Sample.ViewModelLayer\WPF.EbisMaintenance.CoucheViewModel.csproj", "{A5F89EAC-1849-4FEF-8908-C5811E377B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.EbisMaintenance.WebAPI", "API\API.EbisMaintenance.WebAPI\API.EbisMaintenance.WebAPI.csproj", "{4FFC0EEA-0108-4EFF-B5C4-6EEBE6DF336F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.EbisMaintenance.WebAPI", "API\API.EbisMaintenance.WebAPI\API.EbisMaintenance.WebAPI.csproj", "{4FFC0EEA-0108-4EFF-B5C4-6EEBE6DF336F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.EbisMaintenance.Dto", "API\API.EbisMaintenance.Dto\API.EbisMaintenance.Dto.csproj", "{19415E4C-E07A-4A26-ABFA-D6B69A51A516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.EbisMaintenance.Dto", "API\API.EbisMaintenance.Dto\API.EbisMaintenance.Dto.csproj", "{19415E4C-E07A-4A26-ABFA-D6B69A51A516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.EbisMaintenance.Entities", "API\API.EbisMaintenance.Entities\API.EbisMaintenance.Entities.csproj", "{FBDB5C4A-4686-40C2-A7BB-98B8F426984D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.EbisMaintenance.Queries", "API\API.EbisMaintenance.Queries\API.EbisMaintenance.Queries.csproj", "{345B4680-19B1-4993-BFC5-3680C389795E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.EbisMaintenance.Services", "API\API.EbisMaintenance.Services\API.EbisMaintenance.Services.csproj", "{082DF731-ADA2-4271-995E-22242566DA2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.EbisMaintenance.Entities", "API\API.EbisMaintenance.Entities\API.EbisMaintenance.Entities.csproj", "{FBDB5C4A-4686-40C2-A7BB-98B8F426984D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,14 +62,6 @@ Global
 		{FBDB5C4A-4686-40C2-A7BB-98B8F426984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBDB5C4A-4686-40C2-A7BB-98B8F426984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBDB5C4A-4686-40C2-A7BB-98B8F426984D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{345B4680-19B1-4993-BFC5-3680C389795E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{345B4680-19B1-4993-BFC5-3680C389795E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{345B4680-19B1-4993-BFC5-3680C389795E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{345B4680-19B1-4993-BFC5-3680C389795E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{082DF731-ADA2-4271-995E-22242566DA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{082DF731-ADA2-4271-995E-22242566DA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{082DF731-ADA2-4271-995E-22242566DA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{082DF731-ADA2-4271-995E-22242566DA2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
