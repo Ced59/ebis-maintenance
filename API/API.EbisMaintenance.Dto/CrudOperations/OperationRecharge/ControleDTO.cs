@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.OperationRecharge
+namespace API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO
 {
-    class ControleDTO
+    public class ControleDTO
     {
 
         [JsonProperty(PropertyName = "libelle")]
         public string Libelle { get; set; }
 
         [JsonProperty(PropertyName = "détails")]
-        public string Détails { get; set; }
+        public string Notes { get; set; }
     }
 }

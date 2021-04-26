@@ -1,7 +1,7 @@
 ﻿using API.EbisMaintenance.Dto.CrudOperations;
-using API.EbisMaintenance.Dto.CrudOperations.Borne;
+using API.EbisMaintenance.Dto.CrudOperations.BornesDTO;
 using API.EbisMaintenance.Entities.CrudOperations;
-using API.EbisMaintenance.Entities.CrudOperations.Borne;
+using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using AutoMapper;
 using System;
 using System.Collections.Generic;

@@ -4,10 +4,8 @@ using System.Text;
 
 namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 {
-    public class ModeleBatterie
+    public class ForfaitPrepaye
     {
-        public string Fabricant { get; set; }
-
-        public float Capacite { get; set; }
+        public string SoldeKwHeures { get; set; }
     }
 }

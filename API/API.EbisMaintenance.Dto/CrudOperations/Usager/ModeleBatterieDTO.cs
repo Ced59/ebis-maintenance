@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Entities.CrudOperations.Usager
+namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 {
-    class ModeleBatterieDTO
+    public class ModeleBatterieDTO
     {
         [JsonProperty(PropertyName = "fabricant")]
         public string Fabricant { get; set; }
+
         [JsonProperty(PropertyName = "capacite")]
         public float Capacite { get; set; }
     }

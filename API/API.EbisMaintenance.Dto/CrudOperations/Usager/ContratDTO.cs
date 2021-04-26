@@ -1,12 +1,12 @@
-﻿using API.EbisMaintenance.Entities.CrudOperations.Usager;
+﻿using API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.Usager
+namespace API.EbisMaintenance.Dto.CrudOperations.UsagerDTO
 {
-    class ContraDTO
+    public class ContratDTO
     {
         [JsonProperty(PropertyName = "dateContrat")]
         public DateTime DateContrat { get; set; }
@@ -14,15 +14,13 @@ namespace API.EbisMaintenance.Dto.CrudOperations.Usager
         [JsonProperty(PropertyName = "noImmatriculation")]
         public string NoImmatriculation { get; set; }
 
-
         [JsonProperty(PropertyName = "abonnement")]
         public AbonnementDTO Abonnement { get; set; }
 
-        [JsonProperty(PropertyName = "forfaitPrépayé")]
-        public ForfaitPrépayéDTO ForfaitPrépayé { get; set; }
+        [JsonProperty(PropertyName = "forfaitPrepaye")]
+        public ForfaitPrepayeDTO ForfaitPrepaye { get; set; }
 
-        [JsonProperty(PropertyName = "ModeleBatterie")]
-
+        [JsonProperty(PropertyName = "modeleBatterie")]
         public ModeleBatterieDTO ModeleBatterie { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Entities.CrudOperations.Borne
+namespace API.EbisMaintenance.Entities.CrudOperations.BorneEntitie
 {
     public class Borne : ModelBase
     {

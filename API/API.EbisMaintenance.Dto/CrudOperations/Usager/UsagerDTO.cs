@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.Borne
+namespace API.EbisMaintenance.Dto.CrudOperations.UsagerDTO
 {
     public class UsagerDTO : ModelBaseDTO
     {
@@ -20,7 +20,7 @@ namespace API.EbisMaintenance.Dto.CrudOperations.Borne
         public string Ville { get; set; }
 
         [JsonProperty(PropertyName = "codePostal")]
-        public string codePostal { get; set; }
+        public string CodePostal { get; set; }
 
         [JsonProperty(PropertyName = "telFixe")]
         public string TelFixe { get; set; }
@@ -29,7 +29,7 @@ namespace API.EbisMaintenance.Dto.CrudOperations.Borne
         public string TelMobile { get; set; }
 
         [JsonProperty(PropertyName = "contrat")]
-        public Contrat Contrat { get; set; }
+        public ContratDTO Contrat { get; set; }
 
     }
 }

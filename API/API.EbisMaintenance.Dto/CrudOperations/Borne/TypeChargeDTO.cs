@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.Borne
+namespace API.EbisMaintenance.Dto.CrudOperations.BornesDTO
 {
     public class TypeChargeDTO
     {

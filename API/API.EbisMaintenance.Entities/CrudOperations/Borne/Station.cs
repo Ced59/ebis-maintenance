@@ -1,4 +1,4 @@
-﻿namespace API.EbisMaintenance.Entities.CrudOperations.Borne
+﻿namespace API.EbisMaintenance.Entities.CrudOperations.BorneEntitie
 {
     public class Station
     {

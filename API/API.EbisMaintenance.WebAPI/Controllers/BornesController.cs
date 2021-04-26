@@ -1,5 +1,5 @@
-﻿using API.EbisMaintenance.Dto.CrudOperations.Borne;
-using API.EbisMaintenance.Entities.CrudOperations.Borne;
+﻿using API.EbisMaintenance.Dto.CrudOperations.BornesDTO;
+using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
+using API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Entities.CrudOperations.OperationRecharge
+namespace API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie
 {
-    class OperationRecharge : ModelBase
+    public class OperationRecharge : ModelBase
     {
 
         public DateTime DateHeureDebut { get; set; }
@@ -13,16 +15,26 @@ namespace API.EbisMaintenance.Entities.CrudOperations.OperationRecharge
 
         public float NbKwHeures { get; set; }
 
-        public Guid Borne { get; set; }
+        //TODO Voir si on lie directement la borne où on peut relier avec l'id
+        public Borne Borne { get; set; }
 
         public string NoContrat { get; set; }
 
-        public string Prenom { get; set; }
+        //TODO voir si nécéssaire car avec liaison usager pas besoin
 
-        public List<Controle> Controle { get; set; } 
+        //[JsonProperty(PropertyName = "prenom")]
+        //public string Prenom { get; set; }
 
-        public bool demandeEntretien { get; set; }
- 
+        //[JsonProperty(PropertyName = "nom")]
+        //public string Nnom { get; set; }
+
+        //TODO Voir si on lie directement la borne où on peut relier avec l'id
+        public Usager Usager { get; set; }
+
+        public List<Controle> Controle { get; set; }
+
+        public bool DemandeEntretien { get; set; }
+
 
     }
 }

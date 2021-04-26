@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.Usager
+namespace API.EbisMaintenance.Dto.CrudOperations.UsagerDTO
 {
-    class ForfaitPrépayéDTO
+    public class ForfaitPrepayeDTO
     {
         [JsonProperty(PropertyName = "soldesKwHeures")]
-        public float SoldeKwHeures { get; set; }
+        public string SoldeKwHeures { get; set; }
     }
 }

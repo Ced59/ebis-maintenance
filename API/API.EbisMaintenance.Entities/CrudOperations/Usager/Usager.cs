@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Entities.CrudOperations.Usager
+namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 {
-    class Usager : ModelBase
+    public class Usager : ModelBase
     {
         public string Nom { get; set; }
 
@@ -13,6 +13,8 @@ namespace API.EbisMaintenance.Entities.CrudOperations.Usager
         public string Adresse { get; set; }
 
         public string Ville { get; set; }
+
+        public string CodePostal { get; set; }
 
         public string TelFixe { get; set; }
 

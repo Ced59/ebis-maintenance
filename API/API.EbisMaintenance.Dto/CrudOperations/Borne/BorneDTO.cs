@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.Borne
+namespace API.EbisMaintenance.Dto.CrudOperations.BornesDTO
 {
     public class BorneDTO : ModelBaseDTO
     {

@@ -1,4 +1,4 @@
-﻿using API.EbisMaintenance.Entities.CrudOperations.Borne;
+﻿using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using Microsoft.Azure.Cosmos;
 using System;

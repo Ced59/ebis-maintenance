@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Entities.CrudOperations.Usager
+namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 {
-    class Abonnement
+    public class Abonnement
     {
-
         public DateTime DateDebut { get; set;}
 
         public DateTime DateFin { get; set; }

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Entities.CrudOperations.OperationRecharge
+namespace API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie
 {
-    class Controle
+    public class Controle
     {
-         
         public string Libelle { get; set; }
 
         public string Détails { get; set; }

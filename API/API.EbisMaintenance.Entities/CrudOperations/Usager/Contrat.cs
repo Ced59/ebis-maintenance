@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Entities.CrudOperations.Usager
+namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 {
-    class Contrat
+    public class Contrat
     {
         public DateTime DateContrat { get; set; }
 
@@ -12,9 +12,9 @@ namespace API.EbisMaintenance.Entities.CrudOperations.Usager
 
         public Abonnement Abonnement { get; set; }
 
-        public ForfaitPrépayé ForfaitPrépayé { get; set; }
+        public ForfaitPrepaye ForfaitPrepaye { get; set; }
 
-        public ModeleBatterie  ModeleBatterie { get; set; } 
+        public ModeleBatterie ModeleBatterie { get; set; } 
 
     }
 }

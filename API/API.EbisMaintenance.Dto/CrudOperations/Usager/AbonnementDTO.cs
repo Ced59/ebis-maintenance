@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.Usager
+namespace API.EbisMaintenance.Dto.CrudOperations.UsagerDTO
 {
-    class AbonnementDTO
+    public class AbonnementDTO
     {
 
         [JsonProperty(PropertyName = "dateDebut")]
         public DateTime DateDebut { get; set; }
 
-        [JsonProperty(PropertyName = "dateDebut")]
+        [JsonProperty(PropertyName = "dateFin")]
         public DateTime DateFin { get; set; }
     }
 }
