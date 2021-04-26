@@ -12,7 +12,7 @@ namespace API.EbisMaintenance.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/bornes")]
-    public class BornesController
+    public class BornesController : ControllerBase
     {
         private readonly IMapper _mapper;
         private ICosmosDBService<Borne> _serviceBornes;

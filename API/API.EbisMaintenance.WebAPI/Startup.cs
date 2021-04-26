@@ -91,7 +91,7 @@ namespace API.EbisMaintenance.WebAPI
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API E-Bis Maintenance");
-                c.RoutePrefix = "api/bornes";
+                c.RoutePrefix = "api";
             }
             );
 
