@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
   <Window.Resources>
     <vm:MainWindowViewModel x:Key="viewModel"
-                            MsgStatut="MonAppli" />
+                            MsgStatut="e-bis Maintenance" />
   </Window.Resources>
   <Grid Background="{StaticResource gridBackgroundColor}"
         DataContext="{StaticResource viewModel}">
@@ -28,20 +28,21 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header="Liste des incidents"
+                      Tag="WPF.MonAppli.UserControls.ListeIncidentControl"
                   Click="MenuItem_Click" />
-            <MenuItem Header="Voir les classements"
-                Click="MenuItem_Click">
-                <MenuItem Header="Nombre d'accident moyen"/>
-                <MenuItem Header="Top 5 des bornes défaillantes"/>
-                <MenuItem Header="Top 5 des bornes fiables"/>
-                <MenuItem Header="Durée de fonctionnement moyens des bornes"/>
+            <MenuItem Header="Voir les classements">
+                <MenuItem Header="Nombre d'accident moyen"
+                Click="MenuItem_Click"/>
+                <MenuItem Header="Top 5 des bornes défaillantes"
+                Click="MenuItem_Click"/>
+                <MenuItem Header="Top 5 des bornes fiables"
+                Click="MenuItem_Click"/>
+                <MenuItem Header="Durée de fonctionnement moyens des bornes"
+                Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="Entretien"
                 Click="MenuItem_Click" />
-      <MenuItem Header="{Binding Path=MenuHeaderConnexion}"
-                HorizontalAlignment="Right"
-                Click="MenuItem_Click" />
-    </Menu>
+        </Menu>
 
     <!-- Zone de contenu -->
     <Grid Grid.Row="1"
