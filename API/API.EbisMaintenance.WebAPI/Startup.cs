@@ -1,23 +1,15 @@
 using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using API.EbisMaintenance.WebAPI.AutoMapperService;
-using API.EbisMaintenance.WebAPI.CosmosService;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Fluent;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.EbisMaintenance.WebAPI
 {
@@ -63,14 +55,11 @@ namespace API.EbisMaintenance.WebAPI
             CosmosDBService<Borne> serviceBorne = new CosmosDBService<Borne>(client, nomDB, nomContainer);
             services.AddSingleton<ICosmosDBService<Borne>>(serviceBorne);
 
-
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "E-Bis Maintenance API", Version = "v0.0.1" });
             });
-
 
             // Décommenter pour garnir la bdd
             //ServiceDonneesBase.GenererDonneesBase(client, nomDB, nomContainer);

@@ -3,10 +3,7 @@ using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.EbisMaintenance.WebAPI.Controllers
 {
@@ -38,7 +35,6 @@ namespace API.EbisMaintenance.WebAPI.Controllers
             return response;
         }
 
-
         [HttpPost]
         public BorneDTO Post(BorneDTO borneDTO)
         {
@@ -59,7 +55,6 @@ namespace API.EbisMaintenance.WebAPI.Controllers
             return _mapper.Map<BorneDTO>(borneModifiee);
         }
 
-
         [HttpDelete]
         public BorneDTO Delete(BorneDTO borneDTO)
         {
@@ -69,6 +64,5 @@ namespace API.EbisMaintenance.WebAPI.Controllers
 
             return _mapper.Map<BorneDTO>(borneSupprimee);
         }
-
     }
 }

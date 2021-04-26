@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 {
@@ -14,7 +12,6 @@ namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 
         public ForfaitPrepaye ForfaitPrepaye { get; set; }
 
-        public ModeleBatterie ModeleBatterie { get; set; } 
-
+        public ModeleBatterie ModeleBatterie { get; set; }
     }
 }

@@ -2,28 +2,28 @@
 
 namespace Common.Classes
 {
-  public class ExceptionManager : Base
-  {
-    private static ExceptionManager _Instance;
-
-    public static ExceptionManager Instance
+    public class ExceptionManager : Base
     {
-      get
-      {
-        if (_Instance == null)
+        private static ExceptionManager _Instance;
+
+        public static ExceptionManager Instance
         {
-          _Instance = new ExceptionManager();
+            get
+            {
+                if (_Instance == null)
+                {
+                    _Instance = new ExceptionManager();
+                }
+
+                return _Instance;
+            }
+            set { _Instance = value; }
         }
 
-        return _Instance;
-      }
-      set { _Instance = value; }
+        public virtual void Publish(Exception ex)
+        {
+            // TODO: implémentation du publisher d'exceptions
+            System.Diagnostics.Debug.WriteLine(ex.ToString());
+        }
     }
-
-    public virtual void Publish(Exception ex)
-    {
-      // TODO: implémentation du publisher d'exceptions
-      System.Diagnostics.Debug.WriteLine(ex.ToString());
-    }
-  }
 }

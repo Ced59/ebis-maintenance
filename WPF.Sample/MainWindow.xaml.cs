@@ -1,18 +1,16 @@
 ﻿using Common.Classes;
 using System;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Threading;
-using WPF.MonAppli.CoucheDonnees;
 using WPF.MonAppli.CoucheViewModel;
 
 namespace WPF.MonAppli
 {
-  public partial class MainWindow : Window
+    public partial class MainWindow : Window
     {
         private MainWindowViewModel viewModel;
         private string messageOriginal;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +27,7 @@ namespace WPF.MonAppli
                     FermerUserControl();
                     viewModel.MsgStatut = messageOriginal;
                     break;
+
                 case MessageBrokerMessages.DISPLAY_STATUS_MESSAGE:
                     viewModel.MsgStatut = (String)e.MessagePayload;
                     break;
@@ -36,7 +35,7 @@ namespace WPF.MonAppli
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
-    {
+        {
             MenuItem menu = (MenuItem)sender;
             string cmd = string.Empty;
 
@@ -56,7 +55,7 @@ namespace WPF.MonAppli
                     TraiterCommandeMenu(cmd);
                 }
             }
-     }
+        }
 
         public void ChargerUserControl(string nomDuControl)
         {
@@ -94,10 +93,10 @@ namespace WPF.MonAppli
                 case "Fermer":
                     this.Close();
                     break;
+
                 default:
                     break;
             }
-
         }
 
         public void AfficherUserControl(UserControl uc)

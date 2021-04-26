@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace API.EbisMaintenance.Dto.CrudOperations.UsagerDTO
 {
@@ -30,6 +27,5 @@ namespace API.EbisMaintenance.Dto.CrudOperations.UsagerDTO
 
         [JsonProperty(PropertyName = "contrat")]
         public ContratDTO Contrat { get; set; }
-
     }
 }

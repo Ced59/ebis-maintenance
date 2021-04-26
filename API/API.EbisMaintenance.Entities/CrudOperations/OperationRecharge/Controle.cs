@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie
+﻿namespace API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie
 {
     public class Controle
     {
@@ -11,4 +7,3 @@ namespace API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie
         public string Détails { get; set; }
     }
 }
-

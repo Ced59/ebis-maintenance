@@ -3,16 +3,11 @@ using API.EbisMaintenance.Dto.CrudOperations.BornesDTO;
 using API.EbisMaintenance.Entities.CrudOperations;
 using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.EbisMaintenance.WebAPI.AutoMapperService
 {
     public class BorneProfile : Profile
     {
-
         public BorneProfile()
         {
             MapDtoToEntities();

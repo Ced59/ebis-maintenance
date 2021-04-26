@@ -1,9 +1,7 @@
 ﻿using API.EbisMaintenance.Dto.CrudOperations.BornesDTO;
-using API.EbisMaintenance.Dto.CrudOperations.UsagerDTO;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO
 {
@@ -42,6 +40,5 @@ namespace API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO
 
         [JsonProperty(PropertyName = "demandeEntretien")]
         public bool DemandeEntretien { get; set; }
-
     }
 }

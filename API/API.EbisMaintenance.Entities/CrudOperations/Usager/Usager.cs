@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
+﻿namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
 {
     public class Usager : ModelBase
     {
@@ -21,6 +17,5 @@ namespace API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie
         public string TelMobile { get; set; }
 
         public Contrat Contrat { get; set; }
-
     }
 }

@@ -2,12 +2,12 @@
 
 namespace WPF.MonAppli.CoucheDonnees
 {
-  public partial class SampleDbContext : DbContext
-  {
-    public SampleDbContext() : base("name=MonAppli")
+    public partial class SampleDbContext : DbContext
     {
-    }
+        public SampleDbContext() : base("name=MonAppli")
+        {
+        }
 
-    public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
-  }
+        public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
+    }
 }

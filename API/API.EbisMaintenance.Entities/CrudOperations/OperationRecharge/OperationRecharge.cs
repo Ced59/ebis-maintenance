@@ -2,13 +2,11 @@
 using API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie
 {
     public class OperationRecharge : ModelBase
     {
-
         public DateTime DateHeureDebut { get; set; }
 
         public DateTime DateHeureFin { get; set; }
@@ -34,7 +32,5 @@ namespace API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie
         public List<Controle> Controle { get; set; }
 
         public bool DemandeEntretien { get; set; }
-
-
     }
 }

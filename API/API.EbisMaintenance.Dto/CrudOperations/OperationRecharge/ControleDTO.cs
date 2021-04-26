@@ -1,13 +1,9 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO
 {
     public class ControleDTO
     {
-
         [JsonProperty(PropertyName = "libelle")]
         public string Libelle { get; set; }
 

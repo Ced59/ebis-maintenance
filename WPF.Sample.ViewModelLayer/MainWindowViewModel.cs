@@ -2,31 +2,29 @@
 
 namespace WPF.MonAppli.CoucheViewModel
 {
-  public class MainWindowViewModel : ViewModelBase
-  {
-    private string menuHeaderConnexion = "Connexion";
-    private string msgStatut;
-
-
-    public string MenuHeaderConnexion
+    public class MainWindowViewModel : ViewModelBase
     {
-      get { return menuHeaderConnexion; }
-      set
-      {
-        menuHeaderConnexion = value;
-        RaisePropertyChanged("MenuHeaderConnexion");
-      }
-    }
+        private string menuHeaderConnexion = "Connexion";
+        private string msgStatut;
 
-    public string MsgStatut
-    {
-      get { return msgStatut; }
-      set
-      {
-        msgStatut = value;
-        RaisePropertyChanged("MsgStatut");
-      }
-    }
+        public string MenuHeaderConnexion
+        {
+            get { return menuHeaderConnexion; }
+            set
+            {
+                menuHeaderConnexion = value;
+                RaisePropertyChanged("MenuHeaderConnexion");
+            }
+        }
 
-  }
+        public string MsgStatut
+        {
+            get { return msgStatut; }
+            set
+            {
+                msgStatut = value;
+                RaisePropertyChanged("MsgStatut");
+            }
+        }
+    }
 }
