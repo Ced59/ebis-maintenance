@@ -1,7 +1,11 @@
+using API.EbisMaintenance.Entities.CrudOperations.Borne;
+using API.EbisMaintenance.Services.CosmosService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Cosmos;
+using Microsoft.Azure.Cosmos.Fluent;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +30,30 @@ namespace API.EbisMaintenance.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            IConfigurationSection configurationSection = Configuration.GetSection("CosmosDB");
+            string nomDB = configurationSection.GetSection("nomDB").Value;
+            string nomContainer = configurationSection.GetSection("nomContainer").Value;
+            string compte = configurationSection.GetSection("compte").Value;
+            string cle = configurationSection.GetSection("cle").Value;
+
+            CosmosClientBuilder clientBuilder = new CosmosClientBuilder(compte, cle);
+            CosmosClient client = clientBuilder
+                                                    .WithConnectionModeDirect()
+                                                    .Build();
+
+            // Création effective de la BDD
+            DatabaseResponse db = client.CreateDatabaseIfNotExistsAsync(nomDB).GetAwaiter().GetResult();
+
+            // Création du container
+            db.Database.CreateContainerIfNotExistsAsync(nomContainer, "/id").GetAwaiter().GetResult();
+
+            // Création et enregistrement des services par injection de dépendances
+
+            CosmosDBService<Borne> serviceBorne = new CosmosDBService<Borne>(client, nomDB, nomContainer);
+            services.AddSingleton<ICosmosDBService<Borne>>(serviceBorne);
+
+
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

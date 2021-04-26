@@ -4,7 +4,7 @@ using System.Text;
 
 namespace API.EbisMaintenance.Entities.CrudOperations.Borne
 {
-    public class Borne
+    public class Borne : ModelBase
     {
         public DateTime DateMiseEnService { get; set; }
 
