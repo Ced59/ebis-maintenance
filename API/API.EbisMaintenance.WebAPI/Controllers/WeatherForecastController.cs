@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace API.EbisMaintenance.WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/wheatherforecast")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
