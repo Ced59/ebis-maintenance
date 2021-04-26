@@ -29,6 +29,9 @@ namespace WPF.MonAppli
                     FermerUserControl();
                     viewModel.MsgStatut = messageOriginal;
                     break;
+                case MessageBrokerMessages.DISPLAY_STATUS_MESSAGE:
+                    viewModel.MsgStatut = (String)e.MessagePayload;
+                    break;
             }
         }
 

@@ -77,8 +77,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserControls\EntretienControl.xaml.cs">
+      <DependentUpon>EntretienControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FonctionnementMoyenControl.xaml.cs">
+      <DependentUpon>FonctionnementMoyenControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\IncidentMoyenControl.xaml.cs">
+      <DependentUpon>IncidentMoyenControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ListeIncidentControl.xaml.cs">
       <DependentUpon>ListeIncidentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TopBornesDefaillanteControl.xaml.cs">
+      <DependentUpon>TopBornesDefaillanteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TopBornesFiablesControl.xaml.cs">
+      <DependentUpon>TopBornesFiablesControl.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,7 +107,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\EntretienControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FonctionnementMoyenControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\IncidentMoyenControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ListeIncidentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TopBornesDefaillanteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TopBornesFiablesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

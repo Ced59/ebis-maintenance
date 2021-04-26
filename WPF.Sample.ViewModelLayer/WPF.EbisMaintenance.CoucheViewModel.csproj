@@ -48,9 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntretienViewModel.cs" />
+    <Compile Include="FonctionnementMoyenViewModel.cs" />
+    <Compile Include="IncidentMoyenViewModel.cs" />
     <Compile Include="ListeIncidentViewModel.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TopBornesDefaillanteViewModel.cs" />
+    <Compile Include="TopBornesFiablesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Library\Common.Classes.csproj">
