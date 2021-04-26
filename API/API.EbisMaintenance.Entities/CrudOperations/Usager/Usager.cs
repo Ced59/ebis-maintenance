@@ -4,7 +4,7 @@ using System.Text;
 
 namespace API.EbisMaintenance.Entities.CrudOperations.Usager
 {
-    class Usager
+    class Usager : ModelBase
     {
         public string Nom { get; set; }
 

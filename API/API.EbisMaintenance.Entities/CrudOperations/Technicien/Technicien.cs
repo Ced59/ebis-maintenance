@@ -4,7 +4,7 @@ using System.Text;
 
 namespace API.EbisMaintenance.Entities.CrudOperations.Borne
 {
-    public class TechnicienDTO 
+    public class Technicien : ModelBase 
     {
         public string Nom { get; set; }
 

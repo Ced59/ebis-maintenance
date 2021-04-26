@@ -4,7 +4,7 @@ using System.Text;
 
 namespace API.EbisMaintenance.Entities.CrudOperations.OperationRecharge
 {
-    class OperationRecharge
+    class OperationRecharge : ModelBase
     {
 
         public DateTime DateHeureDebut { get; set; }
