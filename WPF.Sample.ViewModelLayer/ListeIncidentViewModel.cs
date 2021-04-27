@@ -1,6 +1,7 @@
 ﻿using Common.Classes;
 using System.Collections.Generic;
 using WPF.MonAppli.CoucheDonnees.Entities.BorneEntities;
+using WPF.MonAppli.CoucheDonnees.Entities.OperationRechargeEntities;
 using WPF.MonAppli.CoucheDonnees.Models;
 
 namespace WPF.MonAppli.CoucheViewModel
@@ -17,6 +18,13 @@ namespace WPF.MonAppli.CoucheViewModel
             var requestBornes = new GetAllBornes();
 
             return requestBornes.LaunchRequestAsync();
+        }
+
+        public List<OperationRecharge> GetOperationRecharges()
+        {
+            var requestOperationRecharges = new GetAllOperationRecharge();
+
+            return requestOperationRecharges.LaunchRequestAsync();
         }
     }
 }
