@@ -1,4 +1,4 @@
-﻿using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
+﻿using WPF.MonAppli.CoucheDonnees.Entities.IncidentEntitie;
 using System;
 using System.Collections.Generic;
 using System.Text;

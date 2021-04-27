@@ -1,20 +1,18 @@
 ﻿using Common.Classes;
 using System.Collections.Generic;
-using WPF.MonAppli.CoucheDonnees.Entities.BorneEntities;
 using WPF.MonAppli.CoucheDonnees.Entities.IncidentEntitie;
-using WPF.MonAppli.CoucheDonnees.Entities.OperationRechargeEntities;
 using WPF.MonAppli.CoucheDonnees.Models;
 
 namespace WPF.MonAppli.CoucheViewModel
 {
     public class ListeIncidentViewModel : ViewModelBase
     {
-        private List<Incident> Incidents;
+        private List<Incident> incidents;
         public List<Incident> AllIncidents {
-            get { return Incidents; }
+            get { return incidents; }
             set
             {
-                Incidents = value;
+                incidents = value;
                 RaisePropertyChanged("AllIncidents");
             } 
         }
@@ -23,25 +21,11 @@ namespace WPF.MonAppli.CoucheViewModel
             AfficherMessageStatut("Liste des incidents");
         }
 
-        public List<Borne> GetListBornes()
-        {
-            var requestBornes = new GetAllBornes();
-
-            return requestBornes.LaunchRequestAsync();
-        }
-
-        public List<OperationRecharge> GetOperationRecharges()
-        {
-            var requestOperationRecharges = new GetAllOperationRecharge();
-
-            return requestOperationRecharges.LaunchRequestAsync();
-        }
-
-        public List<Incident> GetIncidents()
+        public void GetIncidents()
         {
             var requestIncidents = new GetAllIncidents();
 
-            return requestIncidents.LaunchRequestAsync();
+            AllIncidents = requestIncidents.LaunchRequestAsync();
         }
     }
 }
