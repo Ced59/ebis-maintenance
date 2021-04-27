@@ -68,7 +68,7 @@
     <Compile Include="Entities\Usager\Usager.cs" />
     <Compile Include="Entities\Utilisateur.cs" />
     <Compile Include="Models\GetAllBornes.cs" />
-    <Compile Include="Models\GetAllOperationRechargeAsync.cs" />
+    <Compile Include="Models\GetAllOperationRecharge.cs" />
     <Compile Include="Models\GetAllUsagers.cs" />
     <Compile Include="Models\SampleDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
