@@ -58,6 +58,9 @@
     <Compile Include="Entities\Borne\Borne.cs" />
     <Compile Include="Entities\Borne\Station.cs" />
     <Compile Include="Entities\Borne\TypeCharge.cs" />
+    <Compile Include="Entities\Entretien\ElementsVerifies.cs" />
+    <Compile Include="Entities\Entretien\Entretien.cs" />
+    <Compile Include="Entities\Incident\Incident.cs" />
     <Compile Include="Entities\ModelBase.cs" />
     <Compile Include="Entities\OperationRecharge\Controle.cs" />
     <Compile Include="Entities\OperationRecharge\OperationRecharge.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="Entities\Usager\Usager.cs" />
     <Compile Include="Entities\Utilisateur.cs" />
     <Compile Include="Models\GetAllBornes.cs" />
+    <Compile Include="Models\GetAllIncidents.cs" />
     <Compile Include="Models\GetAllOperationRecharge.cs" />
     <Compile Include="Models\GetAllUsagers.cs" />
     <Compile Include="Models\SampleDbContext.cs" />
