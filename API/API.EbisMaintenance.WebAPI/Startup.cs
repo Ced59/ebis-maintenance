@@ -32,6 +32,7 @@ namespace API.EbisMaintenance.WebAPI
             {
                 config.AddProfile<BorneProfile>();
                 config.AddProfile<OperationRechargeProfile>();
+                config.AddProfile<UsagerProfile>();
             });
 
             services.AddAutoMapper(typeof(Startup));
