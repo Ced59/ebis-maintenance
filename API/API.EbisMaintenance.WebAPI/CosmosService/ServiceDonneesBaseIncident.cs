@@ -53,7 +53,7 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
 
             serviceBorne.AjouterItemAsync(borne).GetAwaiter().GetResult();
             
-            var serviceUsager = new CosmosDBService<Usager>(client, nomDB, nomContainer);
+            // Usager
 
             Abonnement abonnement = new Abonnement()
             {
@@ -95,7 +95,11 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                 Contrat = contrat
             };
 
-            var serviceOperationRecharge = new CosmosDBService<OperationRecharge>(client, nomDB, nomContainer);
+            var serviceUsager = new CosmosDBService<Usager>(client, nomDB, nomContainer);
+            serviceUsager.AjouterItemAsync(usager).GetAwaiter().GetResult();
+
+            // Opération Recharge
+
             Controle controle1 = new Controle()
             {
                 Libelle = "Prise",
@@ -181,7 +185,10 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                 DemandeEntretien = true
             };
 
-            var serviceIncident = new CosmosDBService<Incident>(client, nomDB, nomContainer);
+            var serviceOperationRecharge = new CosmosDBService<OperationRecharge>(client, nomDB, nomContainer);
+            serviceOperationRecharge.AjouterItemAsync(operationRecharge1).GetAwaiter().GetResult();
+
+            //Service Incident
 
             Incident incident1 = new Incident()
             {
@@ -210,6 +217,8 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                 Borne = borne,
                 OperationRecharge = operationRecharge4
             };
+            var serviceIncident = new CosmosDBService<Incident>(client, nomDB, nomContainer);
+            serviceIncident.AjouterItemAsync(incident1).GetAwaiter().GetResult();
         }
     }
 }
