@@ -7,7 +7,7 @@ namespace API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO
         [JsonProperty(PropertyName = "libelle")]
         public string Libelle { get; set; }
 
-        [JsonProperty(PropertyName = "détails")]
+        [JsonProperty(PropertyName = "details")]
         public string Notes { get; set; }
     }
 }

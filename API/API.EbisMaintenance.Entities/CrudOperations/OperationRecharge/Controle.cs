@@ -4,6 +4,6 @@
     {
         public string Libelle { get; set; }
 
-        public string Détails { get; set; }
+        public string Notes { get; set; }
     }
 }
