@@ -4,6 +4,6 @@
     {
         public string Libelle { get; set; }
 
-        public string Puissance { get; set; }
+        public float Puissance { get; set; }
     }
 }

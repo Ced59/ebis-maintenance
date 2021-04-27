@@ -8,6 +8,6 @@ namespace API.EbisMaintenance.Dto.CrudOperations.BornesDTO
         public string Libelle { get; set; }
 
         [JsonProperty(PropertyName = "puissance")]
-        public string Puissance { get; set; }
+        public float Puissance { get; set; }
     }
 }

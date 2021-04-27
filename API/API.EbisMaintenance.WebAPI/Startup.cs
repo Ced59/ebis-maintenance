@@ -2,6 +2,7 @@ using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using API.EbisMaintenance.WebAPI.AutoMapperService;
+using API.EbisMaintenance.WebAPI.CosmosService;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -67,7 +68,7 @@ namespace API.EbisMaintenance.WebAPI
             });
 
             // Décommenter pour garnir la bdd
-            //ServiceDonneesBase.GenererDonneesBase(client, nomDB, nomContainer);
+            ServiceDonneesBase.GenererDonneesBase(client, nomDB, nomContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -22,13 +22,13 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             TypeCharge tc1 = new TypeCharge()
             {
                 Libelle = "efficace et sûre",
-                Puissance = "5.4"
+                Puissance = 5.4F
             };
 
             TypeCharge tc2 = new TypeCharge()
             {
                 Libelle = "faut se mefier",
-                Puissance = "152.2"
+                Puissance = 152.2F
             };
 
             List<TypeCharge> typesCharge = new List<TypeCharge> { tc1, tc2 };
