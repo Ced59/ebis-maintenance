@@ -83,8 +83,8 @@ namespace API.EbisMaintenance.WebAPI
             });
 
             // Décommenter pour garnir la bdd
-            //ServiceDonneesBase.GenererDonneesBase(client, nomDB, nomContainer);
-            ServiceDonneesBaseIncident.GenererDonneesBase(client, nomDB, nomContainer);
+            ServiceDonneesBase.GenererDonneesBase(client, nomDB, nomContainer);
+            //ServiceDonneesBaseIncident.GenererDonneesBase(client, nomDB, nomContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

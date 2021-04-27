@@ -1,6 +1,7 @@
 ﻿using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie;
 using API.EbisMaintenance.Services.CosmosService;
+using Bogus;
 using Microsoft.Azure.Cosmos;
 using System;
 using System.Collections.Generic;
@@ -65,7 +66,23 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
 
         private static List<Station> GetFakeStations()
         {
-            return new List<Station>();
+            var faker = new Faker("fr");
+
+            List<Station> stations = new List<Station>();
+
+            for (var i = 1; i <= 50; i++)
+            {
+                stations.Add(new Station
+                {
+                    Latitude = faker.Address.Latitude(-90, 90).ToString(),
+                    Longitude = faker.Address.Longitude(-180, 180).ToString(),
+                    AdresseRue = faker.Address.StreetName(),
+                    AdresseVille = faker.Address.City(),
+                    CodePostal = faker.Address.ZipCode()
+                });
+            }
+
+            return stations;
         }
 
         private static List<TypeCharge> GetFakeTypeCharge()
