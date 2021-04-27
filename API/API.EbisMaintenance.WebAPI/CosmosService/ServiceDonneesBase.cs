@@ -1,8 +1,10 @@
 ﻿using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
+using API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using Microsoft.Azure.Cosmos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace API.EbisMaintenance.WebAPI.CosmosService
 {
@@ -10,6 +12,13 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
     {
         public static void GenererDonneesBase(CosmosClient client, string nomDB, string nomContainer)
         {
+            var serviceOperationRecharge = new CosmosDBService<OperationRecharge>(client, nomDB, nomContainer);
+
+            if (serviceOperationRecharge.GetItemsAsync("select * from c").GetAwaiter().GetResult().ToList().Count == 0)
+            {
+                InsertFakeDataInDb();
+            }
+
             Station station = new Station()
             {
                 Latitude = "33.7866",
@@ -46,6 +55,29 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             CosmosDBService<Borne> serviceBorne = new CosmosDBService<Borne>(client, nomDB, nomContainer);
 
             serviceBorne.AjouterItemAsync(borne).GetAwaiter().GetResult();
+        }
+
+        private static void InsertFakeDataInDb()
+        {
+            List<TypeCharge> typesCharge = GetFakeTypeCharge();
+            List<Station> stations = GetFakeStations();
+        }
+
+        private static List<Station> GetFakeStations()
+        {
+            return new List<Station>();
+        }
+
+        private static List<TypeCharge> GetFakeTypeCharge()
+        {
+            var typesCharge = new List<TypeCharge>();
+
+            typesCharge.Add(new TypeCharge { Libelle = "Charge lente", Puissance = 3.7F });
+            typesCharge.Add(new TypeCharge { Libelle = "Charge moyenne", Puissance = 7.4F });
+            typesCharge.Add(new TypeCharge { Libelle = "Charge rapide", Puissance = 11F });
+            typesCharge.Add(new TypeCharge { Libelle = "Super-charge", Puissance = 22F });
+
+            return typesCharge;
         }
     }
 }
