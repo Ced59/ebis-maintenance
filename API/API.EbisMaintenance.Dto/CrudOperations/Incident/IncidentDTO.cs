@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.IncidentDTO
+namespace API.EbisMaintenance.Dto.CrudOperations.IncidentsDTO
 {
     public class IncidentDTO : ModelBaseDTO
     {

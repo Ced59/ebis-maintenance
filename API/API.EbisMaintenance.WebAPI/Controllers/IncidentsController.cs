@@ -1,4 +1,4 @@
-﻿using API.EbisMaintenance.Dto.CrudOperations.IncidentDTO;
+﻿using API.EbisMaintenance.Dto.CrudOperations.IncidentsDTO;
 using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using AutoMapper;

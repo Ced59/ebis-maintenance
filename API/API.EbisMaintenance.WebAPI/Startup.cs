@@ -1,4 +1,5 @@
 using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
+using API.EbisMaintenance.Entities.CrudOperations.EntretienEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie;
@@ -36,6 +37,7 @@ namespace API.EbisMaintenance.WebAPI
                 config.AddProfile<OperationRechargeProfile>();
                 config.AddProfile<UsagerProfile>();
                 config.AddProfile<IncidentProfile>();
+                config.AddProfile<EntretienProfile>();
             });
 
             services.AddAutoMapper(typeof(Startup));
@@ -70,6 +72,9 @@ namespace API.EbisMaintenance.WebAPI
 
             CosmosDBService<Incident> serviceIncident = new CosmosDBService<Incident>(client, nomDB, nomContainer);
             services.AddSingleton<ICosmosDBService<Incident>>(serviceIncident);
+
+            CosmosDBService<Entretien> serviceEntretien = new CosmosDBService<Entretien>(client, nomDB, nomContainer);
+            services.AddSingleton<ICosmosDBService<Entretien>>(serviceEntretien);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
