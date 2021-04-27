@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace API.EbisMaintenance.WebAPI.Controllers
 {
     [ApiController]
-    [Route("api/operation-recharge")]
+    [Route("api/operations-recharge")]
     public class OperationRechargeController : ControllerBase
     {
         private readonly IMapper _mapper;
