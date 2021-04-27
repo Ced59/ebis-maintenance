@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using WPF.MonAppli.CoucheDonnees.Entities.BorneEntities;
+using WPF.MonAppli.CoucheDonnees.Entities.IncidentEntitie;
 using WPF.MonAppli.CoucheDonnees.Entities.OperationRechargeEntities;
 using WPF.MonAppli.CoucheViewModel;
 
@@ -15,6 +16,7 @@ namespace WPF.MonAppli.UserControls
         private ListeIncidentViewModel viewModel;
         public List<Borne> AllBornes { get; set; }
         public List<OperationRecharge> AllOperationRecharge { get; set; }
+        public List<Incident> AllIncident { get; set; }
 
         public ListeIncidentControl()
         {
@@ -24,10 +26,6 @@ namespace WPF.MonAppli.UserControls
             AllBornes = viewModel.GetListBornes();
 
             AllOperationRecharge = viewModel.GetOperationRecharges();
-
-            var test = AllBornes;
-
-            var test2 = AllOperationRecharge;
         }
 
 
