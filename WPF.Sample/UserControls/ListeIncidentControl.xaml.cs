@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
+using WPF.MonAppli.CoucheDonnees.Entities.BorneEntities;
 using WPF.MonAppli.CoucheViewModel;
 
 namespace WPF.MonAppli.UserControls
@@ -10,11 +12,16 @@ namespace WPF.MonAppli.UserControls
     public partial class ListeIncidentControl : UserControl
     {
         private ListeIncidentViewModel viewModel;
+        public List<Borne> AllBornes { get; set; }
 
         public ListeIncidentControl()
         {
             InitializeComponent();
             viewModel = (ListeIncidentViewModel)this.Resources["viewModel"];
+
+            AllBornes = viewModel.GetListBornes();
+
+            var test = AllBornes;
         }
 
         private void FermerBouton_Click(object sender, RoutedEventArgs e)
