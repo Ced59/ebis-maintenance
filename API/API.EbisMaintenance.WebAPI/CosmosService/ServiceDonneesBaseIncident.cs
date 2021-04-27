@@ -15,7 +15,6 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
     {
         public static void GenererDonneesBase(CosmosClient client, string nomDB, string nomContainer)
         {
-
             Station station = new Station()
             {
                 Latitude = "33.7866",
@@ -52,13 +51,13 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             CosmosDBService<Borne> serviceBorne = new CosmosDBService<Borne>(client, nomDB, nomContainer);
 
             serviceBorne.AjouterItemAsync(borne).GetAwaiter().GetResult();
-            
+
             // Usager
 
             Abonnement abonnement = new Abonnement()
             {
-                DateDebut = new DateTime(1970,5,15),
-                DateFin = new DateTime(2020,6,23)
+                DateDebut = new DateTime(1970, 5, 15),
+                DateFin = new DateTime(2020, 6, 23)
             };
 
             ForfaitPrepaye forfaitPrepaye = new ForfaitPrepaye()
@@ -134,7 +133,7 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                 Id = Guid.NewGuid(),
                 Document = "operation-recharge",
                 DateHeureDebut = new DateTime(1999, 5, 11),
-                DateHeureFin = new DateTime(1999,5,12),
+                DateHeureFin = new DateTime(1999, 5, 12),
                 NbKwHeures = 2.04F,
                 Borne = borne,
                 NoContrat = "1L",
@@ -187,6 +186,9 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
 
             var serviceOperationRecharge = new CosmosDBService<OperationRecharge>(client, nomDB, nomContainer);
             serviceOperationRecharge.AjouterItemAsync(operationRecharge1).GetAwaiter().GetResult();
+            serviceOperationRecharge.AjouterItemAsync(operationRecharge2).GetAwaiter().GetResult();
+            serviceOperationRecharge.AjouterItemAsync(operationRecharge3).GetAwaiter().GetResult();
+            serviceOperationRecharge.AjouterItemAsync(operationRecharge4).GetAwaiter().GetResult();
 
             //Service Incident
 
@@ -219,6 +221,9 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             };
             var serviceIncident = new CosmosDBService<Incident>(client, nomDB, nomContainer);
             serviceIncident.AjouterItemAsync(incident1).GetAwaiter().GetResult();
+            serviceIncident.AjouterItemAsync(incident2).GetAwaiter().GetResult();
+            serviceIncident.AjouterItemAsync(incident3).GetAwaiter().GetResult();
+            serviceIncident.AjouterItemAsync(incident4).GetAwaiter().GetResult();
         }
     }
 }
