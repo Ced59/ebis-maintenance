@@ -10,8 +10,6 @@ namespace API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie
     {
         public string Details { get; set; }
 
-        public Borne Borne { get; set; }
-
         public OperationRecharge OperationRecharge { get; set; }
     }
 }

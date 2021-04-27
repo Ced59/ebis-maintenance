@@ -12,9 +12,6 @@ namespace API.EbisMaintenance.Dto.CrudOperations.IncidentsDTO
         [JsonProperty(PropertyName = "details")]
         public string Details { get; set; }
 
-        [JsonProperty(PropertyName = "borne")]
-        public BorneDTO Borne { get; set; }
-
         [JsonProperty(PropertyName = "operationRecharge")]
         public OperationRechargeDTO OperationRecharge { get; set; }
     }

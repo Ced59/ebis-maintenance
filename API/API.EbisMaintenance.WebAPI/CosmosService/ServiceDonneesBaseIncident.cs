@@ -195,7 +195,6 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             Incident incident1 = new Incident()
             {
                 Details = "Prise et Disque dur",
-                Borne = borne,
                 OperationRecharge = operationRecharge1,
                 Id = Guid.NewGuid(),
                 Document = "incident"
@@ -204,7 +203,6 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             Incident incident2 = new Incident()
             {
                 Details = "Appareil Carte et Routeur",
-                Borne = borne,
                 OperationRecharge = operationRecharge2,
                 Id = Guid.NewGuid(),
                 Document = "incident"
@@ -213,7 +211,6 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             Incident incident3 = new Incident()
             {
                 Details = "Prise et Appareil Carte",
-                Borne = borne,
                 OperationRecharge = operationRecharge3,
                 Id = Guid.NewGuid(),
                 Document = "incident"
@@ -222,7 +219,6 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             Incident incident4 = new Incident()
             {
                 Details = "Routeur et Disque dur",
-                Borne = borne,
                 OperationRecharge = operationRecharge4,
                 Id = Guid.NewGuid(),
                 Document = "incident"
