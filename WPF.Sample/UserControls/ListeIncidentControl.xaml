@@ -13,10 +13,12 @@
         <vm:ListeIncidentViewModel x:Key="viewModel" />
     </UserControl.Resources>
 
-    <Border>
-        <StackPanel>
-            <TextBlock FontSize="40" Text="Liste des incidents" />
-            <Button Click="FermerBouton_Click">Fermer</Button>
-        </StackPanel>
+    <Border >
+        <Grid DataContext="{Binding Source={StaticResource viewModel}}">
+            <StackPanel>
+                <TextBlock FontSize="40" Text="Liste des incidents" />
+                <Button Click="FermerBouton_Click">Fermer</Button>
+            </StackPanel>
+        </Grid>
     </Border>
 </UserControl>

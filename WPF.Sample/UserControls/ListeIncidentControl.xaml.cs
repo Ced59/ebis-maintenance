@@ -20,14 +20,6 @@ namespace WPF.MonAppli.UserControls
         {
             InitializeComponent();
             viewModel = (ListeIncidentViewModel)this.Resources["viewModel"];
-
-            AllBornes = viewModel.GetListBornes();
-
-            AllOperationRecharge = viewModel.GetOperationRecharges();
-
-            var test = AllBornes;
-
-            var test2 = AllOperationRecharge;
         }
 
 
