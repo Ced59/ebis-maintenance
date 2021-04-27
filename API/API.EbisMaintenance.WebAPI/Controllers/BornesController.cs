@@ -23,7 +23,7 @@ namespace API.EbisMaintenance.WebAPI.Controllers
         [HttpGet]
         public IEnumerable<BorneDTO> Get()
         {
-            var result = _serviceBornes.GetItemsAsync("select * from c").GetAwaiter().GetResult();
+            var result = _serviceBornes.GetItemsAsync("select * from c where c.Document = \"borne\"").GetAwaiter().GetResult();
 
             List<BorneDTO> response = new List<BorneDTO>();
 

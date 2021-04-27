@@ -26,7 +26,7 @@ namespace API.EbisMaintenance.WebAPI.Controllers
         [HttpGet]
         public IEnumerable<OperationRechargeDTO> Get()
         {
-            var result = _serviceOperationRecharge.GetItemsAsync("select * from c").GetAwaiter().GetResult();
+            var result = _serviceOperationRecharge.GetItemsAsync("select * from c where c.Document = \"operation-recharge\"").GetAwaiter().GetResult();
 
             List<OperationRechargeDTO> response = new List<OperationRechargeDTO>();
 
