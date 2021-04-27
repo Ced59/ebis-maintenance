@@ -63,6 +63,9 @@
     <Compile Include="Entities\Usager\ModeleBatterie.cs" />
     <Compile Include="Entities\Usager\Usager.cs" />
     <Compile Include="Entities\Utilisateur.cs" />
+    <Compile Include="Models\GetAllBornesAsync.cs" />
+    <Compile Include="Models\GetAllOperationRechargeAsync.cs" />
+    <Compile Include="Models\GetAllUsagerAsync.cs" />
     <Compile Include="Models\SampleDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
