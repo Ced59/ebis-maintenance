@@ -1,4 +1,4 @@
-﻿using API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO;
+﻿using API.EbisMaintenance.Dto.CrudOperations.OperationsRechargeDTO;
 using API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using AutoMapper;

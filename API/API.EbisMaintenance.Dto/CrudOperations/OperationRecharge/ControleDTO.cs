@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO
+namespace API.EbisMaintenance.Dto.CrudOperations.OperationsRechargeDTO
 {
     public class ControleDTO
     {

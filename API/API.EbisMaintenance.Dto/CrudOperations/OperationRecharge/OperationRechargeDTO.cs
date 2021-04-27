@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace API.EbisMaintenance.Dto.CrudOperations.OperationRechargeDTO
+namespace API.EbisMaintenance.Dto.CrudOperations.OperationsRechargeDTO
 {
     public class OperationRechargeDTO : ModelBaseDTO
     {
