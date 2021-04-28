@@ -31,16 +31,16 @@
                       Tag="WPF.MonAppli.UserControls.ListeIncidentControl"
                   Click="MenuItem_Click" />
             <MenuItem Header="Voir les classements">
-                <MenuItem Header="Nombre d'accident moyen"
+                <MenuItem Header="Nombre d'incident moyen par mois"
                       Tag="WPF.MonAppli.UserControls.IncidentMoyenControl"
                 Click="MenuItem_Click" />
-                <MenuItem Header="Top 5 des bornes défaillantes"
+                <MenuItem Header="Top 5 des éléments défaillantes"
                       Tag="WPF.MonAppli.UserControls.TopBornesDefaillanteControl"
                 Click="MenuItem_Click" />
-                <MenuItem Header="Top 5 des bornes fiables"
+                <MenuItem Header="Top 5 des éléments fiables"
                       Tag="WPF.MonAppli.UserControls.TopBornesFiablesControl"
                 Click="MenuItem_Click" />
-                <MenuItem Header="Durée de fonctionnement moyens des bornes"
+                <MenuItem Header="Durée de fonctionnement moyens des éléments"
                       Tag="WPF.MonAppli.UserControls.FonctionnementMoyenControl"
                 Click="MenuItem_Click" />
             </MenuItem>

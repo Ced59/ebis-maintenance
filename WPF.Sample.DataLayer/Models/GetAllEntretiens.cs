@@ -5,30 +5,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WPF.MonAppli.CoucheDonnees.Entities.IncidentEntitie;
+using WPF.MonAppli.CoucheDonnees.Entities.EntretienEntities;
 
 namespace WPF.MonAppli.CoucheDonnees.Models
 {
-    public class GetAllIncidents
+    public class GetAllEntretiens
     {
         public RestClient Client { get; set; }
         public RestRequest Request { get; set; }
 
-        public GetAllIncidents()
+        public GetAllEntretiens()
         {
             Client = new RestClient("https://localhost:44360");
-            Request = new RestRequest("api/incidents", Method.GET)
+            Request = new RestRequest("api/entretiens", Method.GET)
             {
                 RequestFormat = DataFormat.Json
             };
             Request.AddHeader("Content-Type", "application/json");
         }
 
-        public List<Incident> LaunchRequest()
+        public List<Entretien> LaunchRequest()
         {
             var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
 
-            return JsonConvert.DeserializeObject<List<Incident>>(response.Content);
+            return JsonConvert.DeserializeObject<List<Entretien>>(response.Content);
         }
     }
 }

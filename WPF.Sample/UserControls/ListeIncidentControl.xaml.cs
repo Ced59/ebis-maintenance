@@ -20,6 +20,7 @@ namespace WPF.MonAppli.UserControls
         {
             InitializeComponent();
             viewModel = (ListeIncidentViewModel)this.Resources["viewModel"];
+            viewModel.GetIncidents();
         }
 
 
