@@ -13,12 +13,29 @@
         <vm:ListeIncidentViewModel x:Key="viewModel" />
     </UserControl.Resources>
 
-    <Border >
         <Grid DataContext="{Binding Source={StaticResource viewModel}}">
-            <StackPanel>
-                <TextBlock FontSize="40" Text="Liste des incidents" />
-                <Button Click="FermerBouton_Click">Fermer</Button>
-            </StackPanel>
+            <ListView ItemsSource="{Binding Path=AllIncidents}">
+
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true"
+              ColumnHeaderToolTip="Incidents Information">
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Details}" 
+                      Header="Details" Width="200"/>
+
+                        <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=OperationRecharge.Borne.Id}"
+                        Header="Borne" Width="200"/>
+
+                        <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=OperationRecharge.Id}" 
+                        Header="Opération de recharge" Width="200"/>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
         </Grid>
-    </Border>
+
 </UserControl>
