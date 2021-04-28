@@ -28,5 +28,10 @@ namespace WPF.MonAppli.UserControls
         {
             viewModel.Fermer();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

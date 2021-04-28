@@ -10,8 +10,6 @@ namespace WPF.MonAppli.CoucheDonnees.Entities.IncidentEntitie
     {
         public string Details { get; set; }
 
-        public Borne Borne { get; set; }
-
         public OperationRecharge OperationRecharge { get; set; }
     }
 }
