@@ -60,6 +60,8 @@
     <Compile Include="Entities\Borne\TypeCharge.cs" />
     <Compile Include="Entities\Entretien\ElementsVerifies.cs" />
     <Compile Include="Entities\Entretien\Entretien.cs" />
+    <Compile Include="Entities\IncidentsMonthlyAverageEntities\IncidentsMonthlyAverage.cs" />
+    <Compile Include="Entities\IncidentsMonthlyAverageEntities\MonthlyIncidentCount.cs" />
     <Compile Include="Entities\Incident\Incident.cs" />
     <Compile Include="Entities\ModelBase.cs" />
     <Compile Include="Entities\OperationRecharge\Controle.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Models\GetAllOperationRecharge.cs" />
     <Compile Include="Models\GetAllUsagers.cs" />
     <Compile Include="Models\SampleDbContext.cs" />
+    <Compile Include="Models\Statistics\GetIncidentsMonthlyStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

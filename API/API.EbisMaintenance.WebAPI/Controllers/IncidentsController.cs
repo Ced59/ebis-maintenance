@@ -42,12 +42,9 @@ namespace API.EbisMaintenance.WebAPI.Controllers
 
         [HttpGet]
         [Route("get-average")]
-        public IncidentsMonthlyAverageDTO GetAverageIncidents(int deltaYear)
+        public IncidentsMonthlyAverageDTO GetAverageIncidents()
         {
-            if (deltaYear <= 0)
-            {
-                return null;
-            }
+            var deltaYear = 5;
 
             var allIncidents = _serviceIncident.GetItemsAsync("select * from c where c.Document = \"incident\"").GetAwaiter().GetResult().ToList();
 

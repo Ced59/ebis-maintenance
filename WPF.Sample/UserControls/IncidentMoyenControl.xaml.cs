@@ -15,6 +15,7 @@ namespace WPF.MonAppli.UserControls
         {
             InitializeComponent();
             viewModel = (IncidentMoyenViewModel)this.Resources["viewModel"];
+            viewModel.GetStatistics();
         }
 
         private void FermerBouton_Click(object sender, RoutedEventArgs e)
