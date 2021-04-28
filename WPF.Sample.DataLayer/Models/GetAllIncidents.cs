@@ -17,14 +17,14 @@ namespace WPF.MonAppli.CoucheDonnees.Models
         public GetAllIncidents()
         {
             Client = new RestClient("https://localhost:44360");
-            Request = new RestRequest("api/incident", Method.GET)
+            Request = new RestRequest("api/incidents", Method.GET)
             {
                 RequestFormat = DataFormat.Json
             };
             Request.AddHeader("Content-Type", "application/json");
         }
 
-        public List<Incident> LaunchRequestAsync()
+        public List<Incident> LaunchRequest()
         {
             var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
 

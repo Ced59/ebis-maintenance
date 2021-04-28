@@ -7,12 +7,12 @@ namespace WPF.MonAppli.CoucheViewModel
 {
     public class ListeIncidentViewModel : ViewModelBase
     {
-        private List<Incident> incidents;
+        private List<Incident> allIncidents;
         public List<Incident> AllIncidents {
-            get { return incidents; }
+            get { return allIncidents; }
             set
             {
-                incidents = value;
+                allIncidents = value;
                 RaisePropertyChanged("AllIncidents");
             } 
         }
@@ -25,7 +25,7 @@ namespace WPF.MonAppli.CoucheViewModel
         {
             var requestIncidents = new GetAllIncidents();
 
-            AllIncidents = requestIncidents.LaunchRequestAsync();
+            AllIncidents = requestIncidents.LaunchRequest();
         }
     }
 }
