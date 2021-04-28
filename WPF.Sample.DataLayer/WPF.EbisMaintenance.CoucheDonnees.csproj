@@ -71,6 +71,7 @@
     <Compile Include="Entities\Usager\Usager.cs" />
     <Compile Include="Entities\Utilisateur.cs" />
     <Compile Include="Models\GetAllBornes.cs" />
+    <Compile Include="Models\GetAllEntretiens.cs" />
     <Compile Include="Models\GetAllIncidents.cs" />
     <Compile Include="Models\GetAllOperationRecharge.cs" />
     <Compile Include="Models\GetAllUsagers.cs" />
