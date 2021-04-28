@@ -23,15 +23,5 @@ namespace WPF.MonAppli.UserControls
             viewModel.GetIncidents();
         }
 
-
-        private void FermerBouton_Click(object sender, RoutedEventArgs e)
-        {
-            viewModel.Fermer();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

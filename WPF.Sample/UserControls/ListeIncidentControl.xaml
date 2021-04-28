@@ -14,12 +14,18 @@
     </UserControl.Resources>
 
         <Grid DataContext="{Binding Source={StaticResource viewModel}}">
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0" ItemsSource="{Binding Path=AllIncidents}" SelectedItem="{Binding Incident}">
+        <Label Grid.Row="0" Grid.Column="0" FontSize="24" Content="Nombre total d'incident : "/>
+        <Label Grid.Row="0" Grid.Column="1" FontSize="24" Content="{Binding AllIncidents.Count}"/>
+        <ListView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=AllIncidents}" SelectedItem="{Binding Incident}">
 
             <ListView.View>
 
@@ -32,16 +38,7 @@
 
                     <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=OperationRecharge.Borne.Id}"
-                        Header="Borne" Width="200">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Style="{StaticResource toolbarButton}"
-                                        Click="Button_Click"
-                                        Tag="{Binding}"
-                                        ToolTip="Voir la Borne"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                        Header="Borne" Width="200"/>
 
                     <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=OperationRecharge.Id}" 
@@ -50,7 +47,38 @@
 
             </ListView.View>
         </ListView>
-        <TextBox Grid.Column="1" Text="{Binding Incident.Details}" />
+        <Grid Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" DataContext="{Binding Incident}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" FontSize="30" Style="{StaticResource inverseLabel}" Content="Détails de l'incident"/>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Date de l'incident"/>
+            <Label Grid.Row="1" Grid.Column="2" Content="{Binding Path=OperationRecharge.DateHeureFin.Date}"/>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Consommation (kwHeures)"/>
+            <Label Grid.Row="2" Grid.Column="2" Content="{Binding Path=OperationRecharge.NbKwHeures}"/>
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Content="Date de mise en service de la borne"/>
+            <Label Grid.Row="3" Grid.Column="3" Content="{Binding Path=OperationRecharge.Borne.DateMiseEnService.Date}"/>
+            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Content="Date de dernière révision de la borne"/>
+            <Label Grid.Row="4" Grid.Column="3" Content="{Binding Path=OperationRecharge.Borne.DateDerniereRevision.Date}"/>
+            <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Content="Eléments en cause de l'incident"/>
+            <Label Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="{Binding Path=Details}"/>
+            <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,20,0,0" Content="Demande d'entretien"/>
+            <CheckBox Grid.Row="6" Grid.Column="3" IsChecked="{Binding Path=OperationRecharge.DemandeEntretien}"/>
+        </Grid>
     </Grid>
 
 </UserControl>
