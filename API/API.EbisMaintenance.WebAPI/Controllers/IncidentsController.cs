@@ -1,4 +1,6 @@
-﻿using API.EbisMaintenance.Dto.CrudOperations.IncidentsDTO;
+﻿using API.EbisMaintenance.Dto.CalculatedOperations.IncidentsMonthlyAveragesDTO;
+using API.EbisMaintenance.Dto.CrudOperations.IncidentsDTO;
+using API.EbisMaintenance.Entities.CalculatedOperations.IncidentsMonthlyAverageEntities;
 using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
 using API.EbisMaintenance.Services.CosmosService;
 using AutoMapper;
@@ -34,6 +36,25 @@ namespace API.EbisMaintenance.WebAPI.Controllers
             {
                 response.Add(_mapper.Map<IncidentDTO>(incident));
             }
+
+            return response;
+        }
+
+        [HttpGet]
+        [Route("get-average")]
+        public IncidentsMonthlyAverageDTO GetAverageIncidents(int deltaYear)
+        {
+            if (deltaYear <= 0)
+            {
+                return null;
+            }
+
+            var allIncidents = _serviceIncident.GetItemsAsync("select * from c where c.Document = \"incident\"").GetAwaiter().GetResult().ToList();
+
+            var statsIncidents = new IncidentsMonthlyAverage(allIncidents);
+            var result = statsIncidents.GetStats(deltaYear);
+
+            var response = _mapper.Map<IncidentsMonthlyAverageDTO>(result);
 
             return response;
         }
