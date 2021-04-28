@@ -1,4 +1,5 @@
 ﻿using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
+using API.EbisMaintenance.Entities.CrudOperations.EntretienEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.OperationRechargeEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.UsagerEntitie;
@@ -47,6 +48,57 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             List<Incident> incidents = GetFakeIncidents(operationRecharges);
 
             SaveIncidents(incidents, client, nomDB, nomContainer);
+
+            List<ElementsVerifies> elementsVerifies = GetFakeElementsVerifies(controles);
+            List<Entretien> entretiens = GetFakeEntretiens(elementsVerifies, incidents, bornes);
+
+            SaveEntretiens(entretiens, client, nomDB, nomContainer);
+        }
+
+        private static List<Entretien> GetFakeEntretiens(List<ElementsVerifies> elementsVerifies, List<Incident> incidents, List<Borne> bornes)
+        {
+            var faker = new Faker("fr");
+
+            var entretiens = new List<Entretien>();
+
+            for (var i = 0; i < faker.Random.Int(1, incidents.Count - 5); i++)
+            {
+                var incident = faker.PickRandom(incidents);
+
+                entretiens.Add(new Entretien
+                {
+                    Id = Guid.NewGuid(),
+                    Document = "entretien",
+                    Resolu = faker.Random.Bool(),
+                    Borne = faker.PickRandom(bornes),
+                    Incident = incident,
+                    ElementsVerifies = elementsVerifies.Where(e => e.Libelle == incident.Details).ToList()
+                });
+            }
+
+            return entretiens;
+        }
+
+        private static List<Controle> GetFakeControles()
+        {
+            var controles = new List<Controle>
+            {
+                new Controle {Libelle = "Connectiques", Notes = "La prise a une patte cassée"},
+                new Controle {Libelle = "Disque dur", Notes = "Disque Dur Plein"},
+                new Controle {Libelle = "Appareil Carte Bleue", Notes = "Lecteur de carte défectueux"},
+                new Controle {Libelle = "Ecran", Notes = "Ecran déconnecté"},
+                new Controle {Libelle = "Ecran", Notes = "Ecran cassé"},
+                new Controle {Libelle = "Appareil Carte Bleue", Notes = "Clavier numérique HS"},
+                new Controle {Libelle = "Disque Dur", Notes = "Disque Dur défectueux"},
+                new Controle {Libelle = "Général", Notes = "Borne en feu: appelez les pompiers"},
+                new Controle {Libelle = "Général", Notes = "Borne renversée par poids lourd"},
+                new Controle {Libelle = "Connectiques", Notes = "Càble de recharge arraché"},
+                new Controle {Libelle = "Routeur", Notes = "WI-FI HS"},
+                new Controle {Libelle = "Carte mère", Notes = "L'OS ne démarre plus"},
+                new Controle {Libelle = "Alimentation electrique", Notes = "Coupure générale de courant"}
+            };
+
+            return controles;
         }
 
         private static List<Incident> GetFakeIncidents(List<OperationRecharge> operationRecharges)
@@ -60,9 +112,8 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                 "Carte mère",
                 "Alimentation electrique",
                 "Disque dur",
-                "WI-FI",
-                "Incident cause indéterminée",
-                "Câble sectionné"
+                "Général",
+                "Connectiques"
             };
 
             var incidents = new List<Incident>();
@@ -79,6 +130,22 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             }
 
             return incidents;
+        }
+
+        private static List<ElementsVerifies> GetFakeElementsVerifies(List<Controle> controles)
+        {
+            var elementsverifies = new List<ElementsVerifies>();
+
+            foreach (var controle in controles)
+            {
+                elementsverifies.Add(new ElementsVerifies
+                {
+                    Libelle = controle.Libelle,
+                    Notes = controle.Notes
+                });
+            }
+
+            return elementsverifies;
         }
 
         private static List<OperationRecharge> GetOperationsRecharge(List<Controle> controles, List<Borne> bornes, List<Usager> usagers)
@@ -116,25 +183,6 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             }
 
             return operationRecharges;
-        }
-
-        private static List<Controle> GetFakeControles()
-        {
-            var controles = new List<Controle>
-            {
-                new Controle {Libelle = "Prise", Notes = "La prise à une patte cassée"},
-                new Controle {Libelle = "Disque Dur", Notes = "Disque Dur Plein"},
-                new Controle {Libelle = "Appareil Carte", Notes = "Lecteur de carte défectueux"},
-                new Controle {Libelle = "Ecran", Notes = "Ecran déconnecté"},
-                new Controle {Libelle = "Ecran", Notes = "Ecran cassé"},
-                new Controle {Libelle = "Appareil Carte", Notes = "Clavier numérique HS"},
-                new Controle {Libelle = "Disque Dur", Notes = "Disque Dur défectueux"},
-                new Controle {Libelle = "Général", Notes = "Borne en feu: appelez les pompiers"},
-                new Controle {Libelle = "Général", Notes = "Borne renversée par poids lourd"},
-                new Controle {Libelle = "Connectiques", Notes = "Càble de recharge arraché"}
-            };
-
-            return controles;
         }
 
         private static List<Usager> GetFakeUsagers(List<Contrat> contrats)
@@ -363,6 +411,16 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
             foreach (var ic in incidents)
             {
                 serviceIncident.AjouterItemAsync(ic).GetAwaiter().GetResult();
+            }
+        }
+
+        private static void SaveEntretiens(List<Entretien> entretiens, CosmosClient client, string nomDB, string nomContainer)
+        {
+            CosmosDBService<Entretien> serviceEntretien = new CosmosDBService<Entretien>(client, nomDB, nomContainer);
+
+            foreach (var e in entretiens)
+            {
+                serviceEntretien.AjouterItemAsync(e).GetAwaiter().GetResult();
             }
         }
     }
