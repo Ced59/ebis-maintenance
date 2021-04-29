@@ -67,7 +67,6 @@
     <Compile Include="Entities\OperationRecharge\Controle.cs" />
     <Compile Include="Entities\OperationRecharge\OperationRecharge.cs" />
     <Compile Include="Entities\TopFiveElementsWithIncidentsEntities\StatElementDefectueux.cs" />
-    <Compile Include="Entities\TopFiveElementsWithIncidentsEntities\TopFiveElementsWithIncident.cs" />
     <Compile Include="Entities\Usager\Abonnement.cs" />
     <Compile Include="Entities\Usager\Contrat.cs" />
     <Compile Include="Entities\Usager\ForfaitPrepaye.cs" />

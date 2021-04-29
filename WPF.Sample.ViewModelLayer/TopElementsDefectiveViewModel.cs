@@ -1,4 +1,5 @@
 ﻿using Common.Classes;
+using System.Collections.Generic;
 using WPF.MonAppli.CoucheDonnees.Entities;
 using WPF.MonAppli.CoucheDonnees.Models.Statistics;
 
@@ -6,13 +7,13 @@ namespace WPF.MonAppli.CoucheViewModel
 {
     public class TopElementsDefectiveViewModel : ViewModelBase
     {
-        private TopFiveElementsWithIncident topFiveElementsWithIncident;
+        private List<StatElementDefectueux> topFiveElementsWithIncident;
         public TopElementsDefectiveViewModel()
         {
             AfficherMessageStatut("Top 5 des bornes défaillantes");
         }
 
-        public TopFiveElementsWithIncident TopFiveElementsWithIncidents
+        public List<StatElementDefectueux> TopFiveElementsWithIncidents
         {
             get { return topFiveElementsWithIncident; }
             set
