@@ -95,7 +95,16 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                 new Controle {Libelle = "Connectiques", Notes = "Càble de recharge arraché"},
                 new Controle {Libelle = "Routeur", Notes = "WI-FI HS"},
                 new Controle {Libelle = "Carte mère", Notes = "L'OS ne démarre plus"},
-                new Controle {Libelle = "Alimentation electrique", Notes = "Coupure générale de courant"}
+                new Controle {Libelle = "Joints d'étanchéité", Notes = "De l'eau s'infiltre dans la borne"},
+                new Controle {Libelle = "Châssis", Notes = "Manque panneau droit"},
+                new Controle {Libelle = "Châssis", Notes = "Vis enlevées sur le panneau gauche"},
+                new Controle {Libelle = "Controleur de puissance", Notes = "La puissance mesurée est inférieure à la puissance réélle"},
+                new Controle {Libelle = "Disjoncteur", Notes = "Disjoncteur déféctueux à remplacer"},
+                new Controle {Libelle = "RAM", Notes = "Carte RAM déféctueuse à remplacer"},
+                new Controle {Libelle = "Carte graphique", Notes = "Carte graphique déféctueuse à remplacer"},
+                new Controle {Libelle = "Ventilateur", Notes = "Moteur ventilateur HS"},
+                new Controle {Libelle = "Ventilateur", Notes = "Surchauffe de la borne"},
+                new Controle {Libelle = "Carte graphique", Notes = "Problème de connexion de la carte graphique"}
             };
 
             return controles;
