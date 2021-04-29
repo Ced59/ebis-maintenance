@@ -35,10 +35,10 @@
                       Tag="WPF.MonAppli.UserControls.IncidentMoyenControl"
                 Click="MenuItem_Click" />
                 <MenuItem Header="Top 5 des éléments défaillantes"
-                      Tag="WPF.MonAppli.UserControls.TopBornesDefaillanteControl"
+                      Tag="WPF.MonAppli.UserControls.TopElementsDefectiveControl"
                 Click="MenuItem_Click" />
                 <MenuItem Header="Top 5 des éléments fiables"
-                      Tag="WPF.MonAppli.UserControls.TopBornesFiablesControl"
+                      Tag="WPF.MonAppli.UserControls.TopElementsReliableControl"
                 Click="MenuItem_Click" />
                 <MenuItem Header="Durée de fonctionnement moyens des éléments"
                       Tag="WPF.MonAppli.UserControls.FonctionnementMoyenControl"
