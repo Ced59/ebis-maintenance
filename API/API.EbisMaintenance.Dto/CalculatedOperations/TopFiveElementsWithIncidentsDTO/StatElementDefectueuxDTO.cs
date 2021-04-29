@@ -9,6 +9,7 @@ namespace API.EbisMaintenance.Dto.CalculatedOperations.TopFiveElementsWithIncide
     {
         [JsonProperty(PropertyName = "element")]
         public string Element { get; set; }
+
         [JsonProperty(PropertyName = "nbreIncidents")]
         public int NbreIncidents { get; set; }
     }

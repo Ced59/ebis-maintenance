@@ -1,3 +1,4 @@
+using API.EbisMaintenance.Entities.CalculatedOperations.TopFiveElementsWithIncidentsEntities;
 using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.EntretienEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
@@ -77,6 +78,9 @@ namespace API.EbisMaintenance.WebAPI
 
             CosmosDBService<Entretien> serviceEntretien = new CosmosDBService<Entretien>(client, nomDB, nomContainer);
             services.AddSingleton<ICosmosDBService<Entretien>>(serviceEntretien);
+
+            SpecificsCosmosService<StatElementDefectueux> serviceTopFiveElementsDefectives = new SpecificsCosmosService<StatElementDefectueux>(client, nomDB, nomContainer);
+            services.AddSingleton(serviceTopFiveElementsDefectives);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -2,8 +2,10 @@
 using API.EbisMaintenance.Dto.CalculatedOperations.TopFiveElementsWithIncidentsDTO;
 using API.EbisMaintenance.Dto.CrudOperations.IncidentsDTO;
 using API.EbisMaintenance.Entities.CalculatedOperations.IncidentsMonthlyAverageEntities;
+using API.EbisMaintenance.Entities.CalculatedOperations.TopFiveElementsWithIncidentsEntities;
 using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
 using API.EbisMaintenance.Services.CosmosService;
+using API.EbisMaintenance.WebAPI.CosmosService;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,11 +21,13 @@ namespace API.EbisMaintenance.WebAPI.Controllers
     {
         private readonly IMapper _mapper;
         private ICosmosDBService<Incident> _serviceIncident;
+        private SpecificsCosmosService<StatElementDefectueux> _serviceTopFive;
 
-        public IncidentsController(IMapper mapper, ICosmosDBService<Incident> serviceIncident)
+        public IncidentsController(IMapper mapper, ICosmosDBService<Incident> serviceIncident, SpecificsCosmosService<StatElementDefectueux> serviceTopFive)
         {
             _mapper = mapper;
             _serviceIncident = serviceIncident;
+            _serviceTopFive = serviceTopFive;
         }
 
         [HttpGet]
@@ -57,15 +61,24 @@ namespace API.EbisMaintenance.WebAPI.Controllers
             return response;
         }
 
-        //[HttpGet]
-        //[Route("top-five-defective-elements")]
-        //public TopFiveElementsWithIncidentDTO GetTopFiveIncidentsElements()
-        //{
-        //    var deltaYear = 5;
+        [HttpGet]
+        [Route("top-five-defective-elements")]
+        public List<StatElementDefectueuxDTO> GetTopFiveIncidentsElements()
+        {
+            var deltaYear = 5;
 
-        //    var limitDate = DateTime.Now.AddYears(deltaYear);
+            var limitDate = DateTime.Now.AddYears(-deltaYear);
 
-        //    var incidentsFormatted = _serviceIncident.GetItemsAsync("select details from ").GetAwaiter().GetResult().ToList();
-        //}
+            var incidentsFormatted = _serviceTopFive.GetItemsAsync("select c.Details from c where c.Document = \"incident\"").GetAwaiter().GetResult().ToList();
+
+            var response = new List<StatElementDefectueuxDTO>();
+
+            foreach (var elt in incidentsFormatted)
+            {
+                response.Add(_mapper.Map<StatElementDefectueuxDTO>(elt));
+            }
+
+            return response;
+        }
     }
 }

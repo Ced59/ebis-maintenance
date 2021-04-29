@@ -18,13 +18,11 @@ namespace API.EbisMaintenance.WebAPI.AutoMapperService
 
         private void MapEntitiesToDto()
         {
-            CreateMap<TopFiveElementsWithIncident, TopFiveElementsWithIncidentDTO>();
             CreateMap<StatElementDefectueux, StatElementDefectueuxDTO>();
         }
 
         private void MapDtoToEntities()
         {
-            CreateMap<TopFiveElementsWithIncidentDTO, TopFiveElementsWithIncident>();
             CreateMap<StatElementDefectueuxDTO, StatElementDefectueux>();
         }
     }
