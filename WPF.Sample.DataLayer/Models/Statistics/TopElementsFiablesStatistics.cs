@@ -23,11 +23,11 @@ namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
             Request.AddHeader("Content-Type", "application/json");
         }
 
-        public ElementsFiableAverage LaunchRequest()
-        {
-            var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
+        //public ElementsFiableAverage LaunchRequest()
+        //{
+         //   var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
 
-            return JsonConvert.DeserializeObject<ElementFiableAverage>(response.Content);
-        }
+         //   return JsonConvert.DeserializeObject<ElementFiableAverage>(response.Content);
+        //}
     }
 }

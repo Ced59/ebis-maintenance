@@ -99,11 +99,11 @@
     <Compile Include="UserControls\ListeIncidentControl.xaml.cs">
       <DependentUpon>ListeIncidentControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TopBornesDefaillanteControl.xaml.cs">
-      <DependentUpon>TopBornesDefaillanteControl.xaml</DependentUpon>
+    <Compile Include="UserControls\TopElementsDefectiveControl.xaml.cs">
+      <DependentUpon>TopElementsDefectiveControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TopBornesFiablesControl.xaml.cs">
-      <DependentUpon>TopBornesFiablesControl.xaml</DependentUpon>
+    <Compile Include="UserControls\TopElementsReliableControl.xaml.cs">
+      <DependentUpon>TopElementsReliableControl.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -133,11 +133,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\TopBornesDefaillanteControl.xaml">
+    <Page Include="UserControls\TopElementsDefectiveControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\TopBornesFiablesControl.xaml">
+    <Page Include="UserControls\TopElementsReliableControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
