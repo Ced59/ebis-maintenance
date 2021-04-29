@@ -1,4 +1,5 @@
 ﻿using API.EbisMaintenance.Dto.CalculatedOperations.IncidentsMonthlyAveragesDTO;
+using API.EbisMaintenance.Dto.CalculatedOperations.TopFiveElementsWithIncidentsDTO;
 using API.EbisMaintenance.Dto.CrudOperations.IncidentsDTO;
 using API.EbisMaintenance.Entities.CalculatedOperations.IncidentsMonthlyAverageEntities;
 using API.EbisMaintenance.Entities.CrudOperations.IncidentEntitie;
@@ -54,6 +55,17 @@ namespace API.EbisMaintenance.WebAPI.Controllers
             var response = _mapper.Map<IncidentsMonthlyAverageDTO>(result);
 
             return response;
+        }
+
+        [HttpGet]
+        [Route("top-five-defective-elements")]
+        public TopFiveElementsWithIncidentDTO GetTopFiveIncidentsElements()
+        {
+            var deltaYear = 5;
+
+            var limitDate = DateTime.Now.AddYears(deltaYear);
+
+            var incidentsFormatted = _serviceIncident.GetItemsAsync("select details from ").GetAwaiter().GetResult().ToList();
         }
     }
 }

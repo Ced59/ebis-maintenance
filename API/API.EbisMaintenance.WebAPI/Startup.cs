@@ -39,6 +39,7 @@ namespace API.EbisMaintenance.WebAPI
                 config.AddProfile<IncidentProfile>();
                 config.AddProfile<EntretienProfile>();
                 config.AddProfile<IncidentMonthlyAverageProfile>();
+                config.AddProfile<TopFiveElementsDefectueuxProfile>();
             });
 
             services.AddAutoMapper(typeof(Startup));
