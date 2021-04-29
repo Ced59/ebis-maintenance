@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
+using System.Collections.Generic;
 using WPF.MonAppli.CoucheDonnees.Entities;
 
 namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
@@ -19,11 +20,11 @@ namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
             Request.AddHeader("Content-Type", "application/json");
         }
 
-        public TopFiveElementsWithIncident LaunchRequest()
+        public List<StatElementDefectueux> LaunchRequest()
         {
             var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
 
-            return JsonConvert.DeserializeObject<TopFiveElementsWithIncident>(response.Content);
+            return JsonConvert.DeserializeObject<StatElementDefectueux>(response.Content);
         }
     }
 }
