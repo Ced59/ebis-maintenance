@@ -8,6 +8,7 @@ namespace WPF.MonAppli.CoucheViewModel
     public class TopElementsDefectiveViewModel : ViewModelBase
     {
         private List<StatElementDefectueux> topFiveElementsWithIncident;
+
         public TopElementsDefectiveViewModel()
         {
             AfficherMessageStatut("Top 5 des bornes défaillantes");
@@ -25,9 +26,8 @@ namespace WPF.MonAppli.CoucheViewModel
 
         public void getElementDefective()
         {
-            var request = new GetTopFiveElementsWithIncidentStatistics(5);
+            var request = new GetTopFiveElementsWithIncidentStatistics();
             TopFiveElementsWithIncidents = request.LaunchRequest();
-
         }
     }
 }

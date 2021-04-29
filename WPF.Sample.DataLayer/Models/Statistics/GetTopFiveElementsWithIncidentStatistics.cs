@@ -10,7 +10,7 @@ namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
         public RestClient Client { get; set; }
         public RestRequest Request { get; set; }
 
-        public GetTopFiveElementsWithIncidentStatistics(int deltaYear)
+        public GetTopFiveElementsWithIncidentStatistics()
         {
             Client = new RestClient("https://localhost:44360");
             Request = new RestRequest("api/incidents/top-five-defective-elements", Method.GET)
@@ -24,7 +24,7 @@ namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
         {
             var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
 
-            return JsonConvert.DeserializeObject<StatElementDefectueux>(response.Content);
+            return JsonConvert.DeserializeObject<List<StatElementDefectueux>>(response.Content);
         }
     }
 }
