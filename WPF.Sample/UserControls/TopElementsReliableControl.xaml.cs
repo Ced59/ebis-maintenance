@@ -15,6 +15,7 @@ namespace WPF.MonAppli.UserControls
         {
             InitializeComponent();
             viewModel = (TopElementsReliableViewModel)this.Resources["viewModel"];
+            viewModel.getElementReliable();
         }
 
     }

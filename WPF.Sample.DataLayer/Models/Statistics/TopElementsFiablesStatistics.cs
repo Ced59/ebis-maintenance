@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPF.MonAppli.CoucheDonnees.Entities;
 
 namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
 {
-    class TopElementsFiablesStatistics
+    public class TopElementsFiablesStatistics
     {
         public RestClient Client { get; set; }
         public RestRequest Request { get; set; }
 
-        public TopElementsFiablesStatistics(int deltaYear)
+        public TopElementsFiablesStatistics()
         {
             Client = new RestClient("https://localhost:44360");
             Request = new RestRequest("api/incidents/top-five-reliable-elements", Method.GET)
@@ -23,11 +24,11 @@ namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
             Request.AddHeader("Content-Type", "application/json");
         }
 
-        //public ElementsFiableAverage LaunchRequest()
-        //{
-         //   var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
+        public List<StatElementDefectueux> LaunchRequest()
+        {
+            var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
 
-         //   return JsonConvert.DeserializeObject<ElementFiableAverage>(response.Content);
-        //}
+            return JsonConvert.DeserializeObject<List<StatElementDefectueux>>(response.Content);
+        }
     }
 }
