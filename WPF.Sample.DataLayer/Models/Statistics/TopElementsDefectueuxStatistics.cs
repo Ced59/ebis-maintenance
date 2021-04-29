@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WPF.MonAppli.CoucheDonnees.Entities;
 
 namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
 {
@@ -23,11 +19,11 @@ namespace WPF.MonAppli.CoucheDonnees.Models.Statistics
             Request.AddHeader("Content-Type", "application/json");
         }
 
-        public ElementsDefectueuxAverage LaunchRequest()
+        public TopFiveElementsWithIncident LaunchRequest()
         {
             var response = Client.ExecuteAsync(Request).GetAwaiter().GetResult();
 
-            return JsonConvert.DeserializeObject<ElementDefectueuxAverage>(response.Content);
+            return JsonConvert.DeserializeObject<TopFiveElementsWithIncident>(response.Content);
         }
     }
 }
