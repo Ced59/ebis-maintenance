@@ -15,11 +15,15 @@
 
     <Grid Height="500" Width="1200" DataContext="{Binding Source={StaticResource viewModel}}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0" Grid.ColumnSpan="2" Margin="15, 20, 15, 15" MaxHeight="350">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="15, 20, 15, 15" MaxHeight="350">
 
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" Opacity=".2" ShadowDepth="1" />
@@ -78,7 +82,32 @@
                     <TextBlock Foreground="#303030" FontSize="40" Margin="250,0,0,0" Text="{Binding Path=IncidentsMonthlyAverage.Average}" />
                     <TextBlock Foreground="#303030" FontSize="18" VerticalAlignment="Bottom" Margin="8, 6">Incidents par mois</TextBlock>
                 </StackPanel>
+
             </StackPanel>
+            
         </Grid>
+        <ListView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding IncidentsMonthlyAverage.MonthlyIncidentCount}">
+
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true"
+              ColumnHeaderToolTip="Incidents par mois">
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Month.Year}" 
+                      Header="Année" Width="200"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Month.Month}"
+                        Header="Mois" Width="200"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=NbreIncidentMonthly}" 
+                        Header="Nombre d'incident" Width="200"/>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </UserControl>
