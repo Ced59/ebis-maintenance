@@ -15,5 +15,7 @@ namespace API.EbisMaintenance.Entities.CrudOperations.EntretienEntitie
         public Incident Incident { get; set; }
 
         public Borne Borne { get; set; }
+
+        public DateTime DateIntervention { get; set; }
     }
 }

@@ -72,7 +72,8 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                     Resolu = faker.Random.Bool(),
                     Borne = faker.PickRandom(bornes),
                     Incident = incident,
-                    ElementsVerifies = elementsVerifies.Where(e => e.Libelle == incident.Details).ToList()
+                    ElementsVerifies = elementsVerifies.Where(e => e.Libelle == incident.Details).ToList(),
+                    DateIntervention = incident.OperationRecharge.DateHeureFin.AddHours(faker.Random.Int(1, 6))
                 });
             }
 
