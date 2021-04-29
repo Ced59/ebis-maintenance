@@ -57,15 +57,15 @@ namespace API.EbisMaintenance.WebAPI.Controllers
             return response;
         }
 
-        [HttpGet]
-        [Route("top-five-defective-elements")]
-        public TopFiveElementsWithIncidentDTO GetTopFiveIncidentsElements()
-        {
-            var deltaYear = 5;
+        //[HttpGet]
+        //[Route("top-five-defective-elements")]
+        //public TopFiveElementsWithIncidentDTO GetTopFiveIncidentsElements()
+        //{
+        //    var deltaYear = 5;
 
-            var limitDate = DateTime.Now.AddYears(deltaYear);
+        //    var limitDate = DateTime.Now.AddYears(deltaYear);
 
-            var incidentsFormatted = _serviceIncident.GetItemsAsync("select details from ").GetAwaiter().GetResult().ToList();
-        }
+        //    var incidentsFormatted = _serviceIncident.GetItemsAsync("select details from ").GetAwaiter().GetResult().ToList();
+        //}
     }
 }
