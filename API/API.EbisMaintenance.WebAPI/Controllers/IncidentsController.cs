@@ -65,15 +65,7 @@ namespace API.EbisMaintenance.WebAPI.Controllers
         [Route("top-five-defective-elements")]
         public List<StatElementDefectueuxDTO> GetTopFiveIncidentsElements()
         {
-            var deltaYear = 5;
-
-            var limitDate = "\"" + DateTime.Now.AddYears(-deltaYear).ToString("yyyy-mm-dd") + "\"";
-
-            var statsDefectivesElements = _serviceTopFive.GetItemsAsync("select c.Details as Element, COUNT(1) as NbreIncidents " +
-                "from c " +
-                "join(select * from c where c.Document = \"incident\") d " +
-                "join(select * from d where d.OperationRecharge.DateHeureFin >= " + limitDate + " ) e " +
-                "group by c.Details").GetAwaiter().GetResult().ToList();
+            List<StatElementDefectueux> statsDefectivesElements = RequestLaunch();
 
             var statsDefectivesElementsSorted = statsDefectivesElements.OrderByDescending(x => x.NbreIncidents).ToList().GetRange(0, 5);
 
@@ -91,15 +83,7 @@ namespace API.EbisMaintenance.WebAPI.Controllers
         [Route("top-five-reliable-elements")]
         public List<StatElementDefectueuxDTO> GetTopFiveReliableElements()
         {
-            var deltaYear = 5;
-
-            var limitDate = "\"" + DateTime.Now.AddYears(-deltaYear).ToString("yyyy-mm-dd") + "\"";
-
-            var statsDefectivesElements = _serviceTopFive.GetItemsAsync("select c.Details as Element, COUNT(1) as NbreIncidents " +
-                "from c " +
-                "join(select * from c where c.Document = \"incident\") d " +
-                "join(select * from d where d.OperationRecharge.DateHeureFin >= " + limitDate + " ) e " +
-                "group by c.Details").GetAwaiter().GetResult().ToList();
+            List<StatElementDefectueux> statsDefectivesElements = RequestLaunch();
 
             var statsDefectivesElementsSorted = statsDefectivesElements.OrderBy(x => x.NbreIncidents).ToList().GetRange(0, 5);
 
@@ -111,6 +95,21 @@ namespace API.EbisMaintenance.WebAPI.Controllers
             }
 
             return response;
+        }
+
+        private List<StatElementDefectueux> RequestLaunch()
+        {
+            var deltaYear = 5;
+
+            var limitDate = "\"" + DateTime.Now.AddYears(-deltaYear).ToString("yyyy-mm-dd") + "\"";
+
+            var statsDefectivesElements = _serviceTopFive.GetItemsAsync("select c.Details as Element, COUNT(1) as NbreIncidents " +
+                "from c " +
+                "join(select * from c where c.Document = \"incident\") d " +
+                "join(select * from d where d.OperationRecharge.DateHeureFin >= " + limitDate + " ) e " +
+                "group by c.Details").GetAwaiter().GetResult().ToList();
+
+            return statsDefectivesElements;
         }
     }
 }
