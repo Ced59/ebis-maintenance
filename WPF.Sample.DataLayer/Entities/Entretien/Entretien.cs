@@ -16,5 +16,7 @@ namespace WPF.MonAppli.CoucheDonnees.Entities.EntretienEntities
         public Incident Incident { get; set; }
 
         public Borne Borne { get; set; }
+
+        public DateTime DateIntervention { get; set; }
     }
 }

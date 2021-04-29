@@ -20,5 +20,8 @@ namespace API.EbisMaintenance.Dto.CrudOperations.EntretiensDTO
 
         [JsonProperty(PropertyName = "borne")]
         public BorneDTO Borne { get; set; }
+
+        [JsonProperty(PropertyName = "dateIntervention")]
+        public DateTime DateIntervention { get; set; }
     }
 }
