@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace API.EbisMaintenance.Dto.CalculatedOperations.TopFiveElementsWithIncide
 {
     public class TopFiveElementsWithIncidentDTO
     {
+        [JsonProperty(PropertyName = "statsElements")]
         public List<StatElementDefectueuxDTO> StatsElements { get; set; }
     }
 }
