@@ -2,9 +2,9 @@
 
 namespace WPF.MonAppli.CoucheViewModel
 {
-    public class TopBornesDefaillanteViewModel : ViewModelBase
+    public class TopElementsDefaillanteViewModel : ViewModelBase
     {
-        public TopBornesDefaillanteViewModel()
+        public TopElementsDefaillanteViewModel()
         {
             AfficherMessageStatut("Top 5 des bornes défaillantes");
         }

@@ -22,15 +22,15 @@
               ColumnHeaderToolTip="Entretiens Information">
 
                     <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=elementsVerifies}" 
+                          "{Binding Path=Incident.Details}" 
                       Header="Elements Vérifies" Width="200"/>
 
                         <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=incident.Id}"
+                          "{Binding Path=Incident.Id}"
                         Header="incident" Width="200"/>
 
                         <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=borne.Id}" 
+                          "{Binding Path=Borne.Id}" 
                         Header="Borne" Width="200"/>
                 </GridView>
 
