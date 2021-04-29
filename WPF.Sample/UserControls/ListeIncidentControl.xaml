@@ -37,12 +37,16 @@
                       Header="Details" Width="200"/>
 
                     <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=OperationRecharge.Borne.Id}"
-                        Header="Borne" Width="200"/>
+                          "{Binding Path=OperationRecharge.Borne.Station.AdresseVille}"
+                        Header="Ville Borne" Width="200"/>
+                    
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=OperationRecharge.Borne.Station.AdresseRue}"
+                        Header="Adresse Borne" Width="200"/>
 
                     <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=OperationRecharge.Id}" 
-                        Header="Opération de recharge" Width="200"/>
+                          "{Binding Path=OperationRecharge.DateHeureFin}" 
+                        Header="Date de l'incident" Width="200"/>
                 </GridView>
 
             </ListView.View>
@@ -71,9 +75,9 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
                        Text="Date de l'incident"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"
-                       Text="{Binding Path=OperationRecharge.DateHeureFin.Date}"/>
+                       Content="{Binding Path=OperationRecharge.DateHeureFin.Date}"/>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" 
                        Text="Consommation (kwHeures)"/>
@@ -83,27 +87,21 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" 
                        Text="Date de mise en service de la borne"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2"
-                       Text="{Binding Path=OperationRecharge.Borne.DateMiseEnService.Date}"/>
+                       Content="{Binding Path=OperationRecharge.Borne.DateMiseEnService.Date}"/>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" 
                        Text="Date de dernière révision de la borne"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2"
-                       Text="{Binding Path=OperationRecharge.Borne.DateDerniereRevision.Date}"/>
+                       Content="{Binding Path=OperationRecharge.Borne.DateDerniereRevision.Date}"/>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" 
                        Text="Eléments en cause de l'incident"/>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" 
                        Text="{Binding Path=Details}"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" 
-                       Text="Demande d'entretien"/>
-            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" 
-                      Grid.Row="6" Grid.Column="3" 
-                      IsChecked="{Binding Path=OperationRecharge.DemandeEntretien}"/>
         </Grid>
     </Grid>
 
