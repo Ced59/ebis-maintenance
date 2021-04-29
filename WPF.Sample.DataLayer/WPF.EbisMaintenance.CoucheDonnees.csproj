@@ -79,6 +79,8 @@
     <Compile Include="Models\GetAllUsagers.cs" />
     <Compile Include="Models\SampleDbContext.cs" />
     <Compile Include="Models\Statistics\GetIncidentsMonthlyStatistics.cs" />
+    <Compile Include="Models\Statistics\TopElementsDefectueuxStatistics.cs" />
+    <Compile Include="Models\Statistics\TopElementsFiablesStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
