@@ -69,7 +69,7 @@ namespace API.EbisMaintenance.WebAPI.Controllers
 
             var limitDate = DateTime.Now.AddYears(-deltaYear);
 
-            var incidentsFormatted = _serviceTopFive.GetItemsAsync("select c.Details from c where c.Document = \"incident\"").GetAwaiter().GetResult().ToList();
+            var incidentsFormatted = _serviceTopFive.GetItemsAsync("SELECT COUNT(1) as NbreIncidents, c.Details as Element from c where c.Document = \"incident\" group by c.Details").GetAwaiter().GetResult().ToList();
 
             var response = new List<StatElementDefectueuxDTO>();
 
