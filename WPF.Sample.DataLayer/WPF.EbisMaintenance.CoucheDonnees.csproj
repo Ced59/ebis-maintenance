@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AverageElementFunctionnementsEntities\AverageElementFunctionnement.cs" />
+    <Compile Include="Entities\AverageElementFunctionnementsEntities\AverageTimeFunctionnement.cs" />
+    <Compile Include="Entities\AverageElementFunctionnementsEntities\ChangementElements.cs" />
     <Compile Include="Entities\Borne\Borne.cs" />
     <Compile Include="Entities\Borne\Station.cs" />
     <Compile Include="Entities\Borne\TypeCharge.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="Models\GetAllOperationRecharge.cs" />
     <Compile Include="Models\GetAllUsagers.cs" />
     <Compile Include="Models\SampleDbContext.cs" />
+    <Compile Include="Models\Statistics\AverageElementFunctionnementsStatistics.cs" />
     <Compile Include="Models\Statistics\GetIncidentsMonthlyStatistics.cs" />
     <Compile Include="Models\Statistics\GetTopFiveElementsWithIncidentStatistics.cs" />
     <Compile Include="Models\Statistics\TopElementsFiablesStatistics.cs" />

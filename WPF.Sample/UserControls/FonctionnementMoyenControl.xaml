@@ -13,10 +13,24 @@
         <vm:FonctionnementMoyenViewModel x:Key="viewModel" />
     </UserControl.Resources>
 
-    <Border>
-        <StackPanel>
-            <TextBlock FontSize="40" Text="Fonctionnement Moyen des bornes" />
-            <Button Click="FermerBouton_Click">Fermer</Button>
-        </StackPanel>
-    </Border>
+    <Grid DataContext="{Binding Source={StaticResource viewModel}}">
+        <ListView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding AverageFunctionnement}">
+
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true"
+              ColumnHeaderToolTip="Incidents par mois">
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Element}"
+                      Header="Element" Width="400" />
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=AverageNbJours}"
+                        Header="Temps fonctionnement moyen" Width="400" />
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
 </UserControl>
