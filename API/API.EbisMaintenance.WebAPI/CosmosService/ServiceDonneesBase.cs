@@ -113,12 +113,20 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
                 "Alimentation electrique",
                 "Disque dur",
                 "Général",
-                "Connectiques"
+                "Connectiques",
+                "Joints d'étanchéité",
+                "Ecran",
+                "Châssis",
+                "Controleur de puissance",
+                "Disjoncteur",
+                "RAM",
+                "Carte graphique",
+                "Ventilateur"
             };
 
             var incidents = new List<Incident>();
 
-            for (var i = 0; i < 100; i++)
+            for (var i = 0; i < 2000; i++)
             {
                 incidents.Add(new Incident
                 {
@@ -154,7 +162,7 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
 
             var operationRecharges = new List<OperationRecharge>();
 
-            for (var i = 0; i < 300; i++)
+            for (var i = 0; i < 2000; i++)
             {
                 var borne = faker.PickRandom(bornes);
                 var usager = faker.PickRandom(usagers);
@@ -311,9 +319,9 @@ namespace API.EbisMaintenance.WebAPI.CosmosService
 
             List<Borne> bornes = new List<Borne>();
 
-            for (var i = 1; i <= 100; i++)
+            for (var i = 1; i <= 300; i++)
             {
-                var dateMiseService = faker.Date.Between(new DateTime(1945, 1, 1), new DateTime(2020, 1, 1));
+                var dateMiseService = faker.Date.Between(new DateTime(2010, 1, 1), DateTime.Now);
 
                 var dateDerniereRevision = faker.Date.Between(dateMiseService, DateTime.Now);
 
