@@ -7,6 +7,7 @@ namespace WPF.MonAppli.CoucheViewModel
 {
     public class EntretienViewModel : ViewModelBase
     {
+        private Entretien entretien;
         private List<Entretien> allEntretiens;
         public List<Entretien> AllEntretiens
         {
@@ -27,6 +28,15 @@ namespace WPF.MonAppli.CoucheViewModel
             var requestEntretiens = new GetAllEntretiens();
 
             AllEntretiens = requestEntretiens.LaunchRequest();
+        }
+        public Entretien Entretien
+        {
+            get { return entretien; }
+            set
+            {
+                entretien = value;
+                RaisePropertyChanged("entretien");
+            }
         }
     }
 }
