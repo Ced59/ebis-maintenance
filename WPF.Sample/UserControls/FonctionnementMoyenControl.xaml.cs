@@ -15,6 +15,7 @@ namespace WPF.MonAppli.UserControls
         {
             InitializeComponent();
             viewModel = (FonctionnementMoyenViewModel)this.Resources["viewModel"];
+            viewModel.GetAverageElementFunctionnement();
         }
 
         private void FermerBouton_Click(object sender, RoutedEventArgs e)

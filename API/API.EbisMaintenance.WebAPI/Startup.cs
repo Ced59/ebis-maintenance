@@ -1,3 +1,4 @@
+using API.EbisMaintenance.Entities.CalculatedOperations.AverageElementFunctionnementsEntities;
 using API.EbisMaintenance.Entities.CalculatedOperations.TopFiveElementsWithIncidentsEntities;
 using API.EbisMaintenance.Entities.CrudOperations.BorneEntitie;
 using API.EbisMaintenance.Entities.CrudOperations.EntretienEntitie;
@@ -16,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.Collections.Generic;
 
 namespace API.EbisMaintenance.WebAPI
 {
@@ -41,6 +43,7 @@ namespace API.EbisMaintenance.WebAPI
                 config.AddProfile<EntretienProfile>();
                 config.AddProfile<IncidentMonthlyAverageProfile>();
                 config.AddProfile<TopFiveElementsDefectueuxProfile>();
+                config.AddProfile<AverageElementFunctionnementProfile>();
             });
 
             services.AddAutoMapper(typeof(Startup));
@@ -81,6 +84,12 @@ namespace API.EbisMaintenance.WebAPI
 
             SpecificsCosmosService<StatElementDefectueux> serviceTopFiveElementsDefectives = new SpecificsCosmosService<StatElementDefectueux>(client, nomDB, nomContainer);
             services.AddSingleton(serviceTopFiveElementsDefectives);
+
+            SpecificsCosmosService<ChangementElements> serviceChangementElements = new SpecificsCosmosService<ChangementElements>(client, nomDB, nomContainer);
+            services.AddSingleton(serviceChangementElements);
+
+            SpecificsCosmosService<NombreBorne> serviceNbBornes = new SpecificsCosmosService<NombreBorne>(client, nomDB, nomContainer);
+            services.AddSingleton(serviceNbBornes);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
