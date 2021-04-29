@@ -16,22 +16,12 @@ namespace API.EbisMaintenance.Dto.CrudOperations.OperationsRechargeDTO
         [JsonProperty(PropertyName = "nbKwHeures")]
         public float NbKwHeures { get; set; }
 
-        //TODO Voir si on lie directement la borne où on peut relier avec l'id
         [JsonProperty(PropertyName = "borne")]
         public BorneDTO Borne { get; set; }
 
         [JsonProperty(PropertyName = "noContrat")]
         public string NoContrat { get; set; }
 
-        //TODO voir si nécéssaire car avec liaison usager pas besoin
-
-        //[JsonProperty(PropertyName = "prenom")]
-        //public string Prenom { get; set; }
-
-        //[JsonProperty(PropertyName = "nom")]
-        //public string Nnom { get; set; }
-
-        //TODO Voir si on lie directement la borne où on peut relier avec l'id
         [JsonProperty(PropertyName = "usager")]
         public UsagerDTO.UsagerDTO Usager { get; set; }
 
