@@ -2,9 +2,9 @@
 
 namespace WPF.MonAppli.CoucheViewModel
 {
-    public class TopBornesFiablesViewModel : ViewModelBase
+    public class TopElementsFiablesViewModel : ViewModelBase
     {
-        public TopBornesFiablesViewModel()
+        public TopElementsFiablesViewModel()
         {
             AfficherMessageStatut("Top 5 des bornes fiables");
         }

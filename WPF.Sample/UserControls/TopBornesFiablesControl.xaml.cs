@@ -9,12 +9,12 @@ namespace WPF.MonAppli.UserControls
     /// </summary>
     public partial class TopBornesFiablesControl : UserControl
     {
-        private TopBornesFiablesViewModel viewModel;
+        private TopElementsFiablesViewModel viewModel;
 
         public TopBornesFiablesControl()
         {
             InitializeComponent();
-            viewModel = (TopBornesFiablesViewModel)this.Resources["viewModel"];
+            viewModel = (TopElementsFiablesViewModel)this.Resources["viewModel"];
         }
 
         private void FermerBouton_Click(object sender, RoutedEventArgs e)

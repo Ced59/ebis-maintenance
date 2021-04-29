@@ -9,12 +9,12 @@ namespace WPF.MonAppli.UserControls
     /// </summary>
     public partial class TopBornesDefaillanteControl : UserControl
     {
-        private TopBornesDefaillanteViewModel viewModel;
+        private TopElementsDefaillanteViewModel viewModel;
 
         public TopBornesDefaillanteControl()
         {
             InitializeComponent();
-            viewModel = (TopBornesDefaillanteViewModel)this.Resources["viewModel"];
+            viewModel = (TopElementsDefaillanteViewModel)this.Resources["viewModel"];
         }
 
         private void FermerBouton_Click(object sender, RoutedEventArgs e)
