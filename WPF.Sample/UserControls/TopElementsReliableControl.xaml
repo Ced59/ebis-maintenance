@@ -13,21 +13,24 @@
     </UserControl.Resources>
 
     <Grid DataContext="{Binding Source={StaticResource viewModel}}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Elements" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="Nombre d'incident" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="Nombre d'incident" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <ListView ItemsSource="{Binding Path=TopFiveReliableElements}">
+
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true"
+              ColumnHeaderToolTip="TOP 5 des éléments défectueux">
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Element}" 
+                      Header="Elements" Width="400"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=NbreIncidents}"
+                        Header="Nombre d'incident" Width="400"/>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
     </Grid>
-     
+
 </UserControl>
