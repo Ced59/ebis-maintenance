@@ -34,13 +34,14 @@ Pour tester et lancer:
 
 
 
-    -Lancer l'API dans une instance de votre IDE (Visual Studio conseillé)
-    -Au premier lancement de l'API, un système de création de fausses données sera lancé. Ce premier lancement est donc assez long (environ 4mn)
-    -Une fois l'API lancée, dans une nouvelle instance de votre IDE, lancez le client lourd WPF
-    -Tout est prêt, Enjoy Test ;-)
+    
+    - Lancer l'API dans une instance de votre IDE (Visual Studio conseillé)
+    - Au premier lancement de l'API, un système de création de fausses données sera lancé. Ce premier lancement est donc assez long (environ 4mn) 
+    - Une fois l'API lancée, dans une nouvelle instance de votre IDE, lancez le client lourd WPF
+    - Tout est prêt, Enjoy Test ;-)
 
 Vous pouvez, de plus, accéder aux différents endpoints de l'API (mise en forme: Swagger) en suivant cette adresse:
-    - https://localhost:44360/api
+    -  https://localhost:44360/api
 
 
 Projet réalisé en une semaine. Donc bien sûr il est loin d'être parfait. Les principales fonctionnalités demandées ont par ailleurs été implémentées. De nombreux axes d'améliorations sont possibles, que ce soit coté code (refactorisation, gérénicité), ou coté expérience utilisateur.
