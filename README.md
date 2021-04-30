@@ -17,7 +17,7 @@ Projet sous la forme:
 Pour tester et lancer:
     -Installer et lancer Cosmos DB Emulator
     -Configurer les "secret user" du coté API en y ajoutant ce JSON: (adaptez selon vos besoins)
-                ```
+                
 {
                  "CosmosDB": 
                  {
@@ -27,7 +27,7 @@ Pour tester et lancer:
                     "cle": "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
                   }
                 }
-```
+
 
 
     -Lancer l'API dans une instance de votre IDE (Visual Studio conseillé)
