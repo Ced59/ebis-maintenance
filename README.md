@@ -15,8 +15,9 @@ Projet sous la forme:
 
 
 Pour tester et lancer:
-    -Installer et lancer Cosmos DB Emulator
-    -Configurer les "secret user" du coté API en y ajoutant ce JSON: (adaptez selon vos besoins)
+    
+  - Installer et lancer Cosmos DB Emulator
+  - Configurer les "secret user" du coté API en y ajoutant ce JSON: (adaptez selon vos besoins)
 
 >  {
                  "CosmosDB": 
