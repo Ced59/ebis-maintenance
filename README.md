@@ -20,7 +20,7 @@ Pour tester et lancer:
   - Configurer les "secret user" du coté API en y ajoutant ce JSON: (adaptez selon vos besoins)
 
 ```
-  {
+              {
                  "CosmosDB": 
                  {
                   "nomDB": "EbisMaintenanceApp",
@@ -28,14 +28,8 @@ Pour tester et lancer:
                     "compte": "https://localhost:8081/",
                     "cle": "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
                   }
-            }
+              }
 
-
-           
-
-
-
-    
 ```
 
     - Lancer l'API dans une instance de votre IDE (Visual Studio conseillé)
