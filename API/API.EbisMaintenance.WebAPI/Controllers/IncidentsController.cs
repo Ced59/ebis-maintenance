@@ -65,9 +65,9 @@ namespace API.EbisMaintenance.WebAPI.Controllers
         [Route("top-five-defective-elements")]
         public List<StatElementDefectueuxDTO> GetTopFiveIncidentsElements()
         {
-            List<StatElementDefectueux> statsDefectivesElements = RequestLaunch();
+            List<StatElementDefectueux> statsElements = RequestLaunch();
 
-            var statsDefectivesElementsSorted = statsDefectivesElements.OrderByDescending(x => x.NbreIncidents).ToList().GetRange(0, 5);
+            var statsDefectivesElementsSorted = statsElements.OrderByDescending(x => x.NbreIncidents).ToList().GetRange(0, 5);
 
             var response = new List<StatElementDefectueuxDTO>();
 
@@ -83,13 +83,13 @@ namespace API.EbisMaintenance.WebAPI.Controllers
         [Route("top-five-reliable-elements")]
         public List<StatElementDefectueuxDTO> GetTopFiveReliableElements()
         {
-            List<StatElementDefectueux> statsDefectivesElements = RequestLaunch();
+            List<StatElementDefectueux> statsElements = RequestLaunch();
 
-            var statsDefectivesElementsSorted = statsDefectivesElements.OrderBy(x => x.NbreIncidents).ToList().GetRange(0, 5);
+            var statsReliableElementsSorted = statsElements.OrderBy(x => x.NbreIncidents).ToList().GetRange(0, 5);
 
             var response = new List<StatElementDefectueuxDTO>();
 
-            foreach (var elt in statsDefectivesElementsSorted)
+            foreach (var elt in statsReliableElementsSorted)
             {
                 response.Add(_mapper.Map<StatElementDefectueuxDTO>(elt));
             }

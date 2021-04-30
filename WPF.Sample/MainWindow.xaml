@@ -34,7 +34,7 @@
                 <MenuItem Header="Nombre d'incident moyen par mois"
                       Tag="WPF.MonAppli.UserControls.IncidentMoyenControl"
                 Click="MenuItem_Click" />
-                <MenuItem Header="Top 5 des éléments défaillantes"
+                <MenuItem Header="Top 5 des éléments défaillants"
                       Tag="WPF.MonAppli.UserControls.TopElementsDefectiveControl"
                 Click="MenuItem_Click" />
                 <MenuItem Header="Top 5 des éléments fiables"
