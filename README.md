@@ -19,7 +19,8 @@ Pour tester et lancer:
   - Installer et lancer Cosmos DB Emulator
   - Configurer les "secret user" du coté API en y ajoutant ce JSON: (adaptez selon vos besoins)
 
->  {
+```
+  {
                  "CosmosDB": 
                  {
                   "nomDB": "EbisMaintenanceApp",
@@ -35,6 +36,8 @@ Pour tester et lancer:
 
 
     
+```
+
     - Lancer l'API dans une instance de votre IDE (Visual Studio conseillé)
     - Au premier lancement de l'API, un système de création de fausses données sera lancé. Ce premier lancement est donc assez long (environ 4mn) 
     - Une fois l'API lancée, dans une nouvelle instance de votre IDE, lancez le client lourd WPF
