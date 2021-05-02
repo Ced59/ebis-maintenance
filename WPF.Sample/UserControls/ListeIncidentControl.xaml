@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="WPF.MonAppli.UserControls.ListeIncidentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WPF.MonAppli.UserControls"
+             xmlns:vm="clr-namespace:WPF.MonAppli.CoucheViewModel;assembly=WPF.MonAppli.CoucheViewModel"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Style="{StaticResource screenStyle}">
+
+    <UserControl.Resources>
+        <vm:ListeIncidentViewModel x:Key="viewModel" />
+    </UserControl.Resources>
+
+        <Grid DataContext="{Binding Source={StaticResource viewModel}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" FontSize="24" Text="Nombre total d'incident : " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="24" Text="{Binding AllIncidents.Count}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ListView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=AllIncidents}" SelectedItem="{Binding Incident}">
+
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true"
+              ColumnHeaderToolTip="Incidents Information">
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Details}" 
+                      Header="Details" Width="200"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=OperationRecharge.Borne.Station.AdresseVille}"
+                        Header="Ville Borne" Width="200"/>
+                    
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=OperationRecharge.Borne.Station.AdresseRue}"
+                        Header="Adresse Borne" Width="200"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=OperationRecharge.DateHeureFin}" 
+                        Header="Date de l'incident" Width="200"/>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" DataContext="{Binding Incident}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" FontSize="30" 
+                       Text="Détails de l'incident"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                       Text="Date de l'incident"/>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"
+                       Content="{Binding Path=OperationRecharge.DateHeureFin.Date}"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" 
+                       Text="Consommation (kwHeures)"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2"
+                       Text="{Binding Path=OperationRecharge.NbKwHeures}"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" 
+                       Text="Date de mise en service de la borne"/>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2"
+                       Content="{Binding Path=OperationRecharge.Borne.DateMiseEnService.Date}"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" 
+                       Text="Date de dernière révision de la borne"/>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2"
+                       Content="{Binding Path=OperationRecharge.Borne.DateDerniereRevision.Date}"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" 
+                       Text="Eléments en cause de l'incident"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" 
+                       Text="{Binding Path=Details}"/>
+        </Grid>
+    </Grid>
+
+</UserControl>

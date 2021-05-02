@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
   <Window.Resources>
     <vm:MainWindowViewModel x:Key="viewModel"
-                            MsgStatut="MonAppli" />
+                            MsgStatut="e-bis Maintenance" />
   </Window.Resources>
   <Grid Background="{StaticResource gridBackgroundColor}"
         DataContext="{StaticResource viewModel}">
@@ -22,23 +22,32 @@
     <!-- Menu -->
     <Menu Grid.Row="0"
           IsMainMenu="True">
-      <Menu.ItemsPanel>
-        <ItemsPanelTemplate>
-          <DockPanel HorizontalAlignment="Stretch" />
-        </ItemsPanelTemplate>
-      </Menu.ItemsPanel>
-      <MenuItem Header="_Fichier">
-        <MenuItem Header="F_ermer"
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="Liste des incidents"
+                      Tag="WPF.MonAppli.UserControls.ListeIncidentControl"
                   Click="MenuItem_Click" />
-      </MenuItem>
-      <MenuItem Header="Utilisateurs"
+            <MenuItem Header="Voir les classements">
+                <MenuItem Header="Nombre d'incident moyen par mois"
+                      Tag="WPF.MonAppli.UserControls.IncidentMoyenControl"
                 Click="MenuItem_Click" />
-      <MenuItem Header="Faire un retour"
+                <MenuItem Header="Top 5 des éléments défaillants"
+                      Tag="WPF.MonAppli.UserControls.TopElementsDefectiveControl"
                 Click="MenuItem_Click" />
-      <MenuItem Header="{Binding Path=MenuHeaderConnexion}"
-                HorizontalAlignment="Right"
+                <MenuItem Header="Top 5 des éléments fiables"
+                      Tag="WPF.MonAppli.UserControls.TopElementsReliableControl"
                 Click="MenuItem_Click" />
-    </Menu>
+                <MenuItem Header="Durée de fonctionnement moyens des éléments"
+                      Tag="WPF.MonAppli.UserControls.FonctionnementMoyenControl"
+                Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Entretien"
+                      Tag="WPF.MonAppli.UserControls.EntretienControl"
+                Click="MenuItem_Click" />
+        </Menu>
 
     <!-- Zone de contenu -->
     <Grid Grid.Row="1"
